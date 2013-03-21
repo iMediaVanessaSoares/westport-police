@@ -16,7 +16,7 @@ $ git branch {yourname}
 $ git checkout {yourname}
 $ git commit -am '{yourname branch}'
 # work work work
-$ git commit status
+$ git commit status #to view unstaged changes
 $ git add {dir/*} #repeat for each dir
 $ git commit -am '{your commit message}'
 $ git push origin {yourname}

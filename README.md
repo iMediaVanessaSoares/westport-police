@@ -12,6 +12,7 @@ in the repo run
 $ ln -s /home/imedia/westport-police/westport-police.nginx /etc/nginx/sites-enabled/westport-police
 $ service nginx restart
 $ npm install
+$ grunt --force #build
 $ git branch {yourname}
 $ git checkout {yourname}
 $ git commit -am '{yourname branch}'
@@ -20,3 +21,5 @@ $ git commit status #to view unstaged changes
 $ git add {dir/*} #repeat for each dir
 $ git commit -am '{your commit message}'
 $ git push origin {yourname}
+```
+You can also run: ```$ grunt watch&``` to place your auto build in the background.

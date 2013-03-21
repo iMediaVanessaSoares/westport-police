@@ -250,6 +250,9 @@ textarea {
 .box-underline {
   border-bottom: 1px solid; }
 
+.header {
+  border: 2px solid; }
+
 .header-left {
   width: 11.4cm; }
 
@@ -265,12 +268,9 @@ textarea {
 .header-left > div > label {
   font-size: 9pt;
   display: block;
-  font-size: 9pt;
   padding-left: 1em; }
 
 .header-left > div > input {
-  display: block;
-  font-size: 9pt;
   width: 95%;
   margin-left: 1em; }
 
@@ -278,9 +278,9 @@ textarea {
   width: 9.8cm; }
 
 .docket {
-  width: 4in;
-  margin-left: -13px;
-  margin-top: 10px; }
+  width: 381px;
+  margin-left: -10px;
+  margin-top: 14px; }
 
 .header-input-box {
   display: inline-block; }
@@ -291,12 +291,10 @@ textarea {
 .header-right > div > label {
   font-size: 9pt;
   display: block;
-  font-size: 9pt;
   padding-left: 1em; }
 
 .header-right > div > input {
   display: block;
-  font-size: 9pt;
   width: 95%;
   margin-left: 1em; }
 

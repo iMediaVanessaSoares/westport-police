@@ -16,6 +16,9 @@ $brown : #A34719;
 .box-underline {
   border-bottom: 1px solid;
 }
+.header {
+  border: 2px solid;
+}
 .header-left {
   width: 11.4cm;
 }
@@ -30,7 +33,6 @@ $brown : #A34719;
 }
 @mixin block-label {
   display: block;
-  font-size: 9pt;
 }
 @mixin header-label-font {
   font-size: 9pt;
@@ -41,7 +43,6 @@ $brown : #A34719;
   padding-left: 1em;
 }
 .header-left > div > input {
-  @include block-label;
   width: 95%;
   margin-left: 1em;
 }
@@ -49,18 +50,15 @@ $brown : #A34719;
   width: 9.8cm;
 }
 .docket {
-  width: 4in;
-  margin-left: -13px;
-  margin-top: 10px;
+  width: 381px;
+  margin-left: -10px;
+  margin-top: 14px;
 }
 .header-input-box {
   display: inline-block;
 }
 .header-input-box label {
   @include header-label-font;
-}
-.header-right {
-  
 }
 .header-right> div > label {
   @include header-label-font;

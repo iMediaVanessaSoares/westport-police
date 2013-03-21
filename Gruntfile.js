@@ -52,7 +52,7 @@ module.exports = function(grunt) {
         glob_to_multiple: {
             expand: true,
             cwd: 'sass/',
-            src: ['base/*.scss','layout/*.scss','module/*.scss','theme/*.scss'],
+            src: ['*.scss'],
             dest: 'webapp/css/',
             ext: '.css'
         }

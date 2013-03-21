@@ -1,12 +1,16 @@
 westport-police
 ===============
 
-Use the iMedia Node Server
+Use the iMedia Node Server and pull the latest in the other project to ensure you get the correct nginx config
 
 clone
 
+
+
 in the repo run
 ```bash
+$ ln -s /home/imedia/westport-police/westport-police.nginx /etc/nginx/sites-enabled/westport-police
+$ service nginx restart
 $ npm install
 $ git branch {yourname}
 $ git checkout {yourname}

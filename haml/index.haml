@@ -58,34 +58,73 @@
         %b APPLICANT,
         being duly sworn, depose and say that:
       
-      .question-2-checkboxes
-        %ul
+      .questions
+        %ol
           %li
             I have the following information based upon the attached affidavit(s), consisting of a total of 
             %input.bare-input.number-input{:type => "number", :name => "pages"}, pages
             %br
             which is (are) incorporated herein by reference.
           %li
-            Based upon...
+            Based upon this information, there is
+            %b PROBABLE CAUSE
+            to believe that the property described below:
             %blockquote.tight-paragraphs
               %p
                 %input{:type => "checkbox", :name => "1"}
-                %label{:for => "1", :name => "checkbox"}
+                %label{:for => "1", :name => "1"}
                   has been stolen, embezzled, or obtained by false pretenses.
 
               %p
-                %input{:type => "checkbox", :name => "1"}
-                %label{:for => "1", :name => "checkbox"}
-                  has been stolen, embezzled, or obtained by false pretenses.
+                %input{:type => "checkbox", :name => "2"}
+                %label{:for => "1", :name => "2"}
+                  is intended for use or has been used as the means of committing a crime.
 
               %p
-                %input{:type => "checkbox", :name => "1"}
-                %label{:for => "1", :name => "checkbox"}
-                  has been stolen, embezzled, or obtained by false pretenses.
+                %input{:type => "checkbox", :name => "3"}
+                %label{:for => "1", :name => "3"}
+                  has been concealed to prevent a crime from being discovered.
               %p
-                %input{:type => "checkbox", :name => "1"}
-                %label{:for => "1", :name => "checkbox"}
-                  has been stolen, embezzled, or obtained by false pretenses.
+                %input{:type => "checkbox", :name => "4"}
+                %label{:for => "1", :name => "4"}
+                  is unlawfully possessed or concealed for an unlawful purpose.
+              %p
+                %input{:type => "checkbox", :name => "5"}
+                %label{:for => "1", :name => "5"}
+                  is evidence of a crime or is evidence of criminal activity.
+              %p
+                %input{:type => "checkbox", :name => "6"}
+                %label{:for => "1", :name => "6"}
+                  other
+                  %i
+                    (specify)
+                %input.other{:type => "text", :name => "6-1"}
+                %label{:for => "1", :name => "6-1"}
+          %li
+            %p
+              I am seeking the issuance of a warrant to search for the following property
+              %i
+                (describe the property to by
+                %br
+                searched for as particularly as possible)
+            - 5.times do
+              %input.text-line{:type => "text", :name => ""}
+          %li
+            %p
+              Based upon this information, there is also probable cause to believe 
+              that the property may be found
+              %i
+                (check as may as apply)
+              %br
+              %input{:type => "checkbox", :name => "6"}
+              %label{:for => "1", :name => "6"}
+                as
+                %i
+                  (identify the exact location or description of the place(s) to be searched):
+
+              - 2.times do
+                %input.text-line{:type => "text", :name => ""}
+
     -#:javascript
       window.jQuery || document.write('<\/script>')
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

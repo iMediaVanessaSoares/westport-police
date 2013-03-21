@@ -64,8 +64,8 @@
         <b>APPLICANT,</b>
         being duly sworn, depose and say that:
       </p>
-      <div class="question-2-checkboxes">
-        <ul>
+      <div class="questions">
+        <ol>
           <li>
             I have the following information based upon the attached affidavit(s), consisting of a total of
             <input class="bare-input number-input" name="pages" type="number">, pages</input>
@@ -73,35 +73,88 @@
             which is (are) incorporated herein by reference.
           </li>
           <li>
-            Based upon...
+            Based upon this information, there is
+            <b>PROBABLE CAUSE</b>
+            to believe that the property described below:
             <blockquote class="tight-paragraphs">
               <p>
                 <input name="1" type="checkbox" />
-                <label for="1" name="checkbox">
+                <label for="1" name="1">
                   has been stolen, embezzled, or obtained by false pretenses.
                 </label>
               </p>
               <p>
-                <input name="1" type="checkbox" />
-                <label for="1" name="checkbox">
-                  has been stolen, embezzled, or obtained by false pretenses.
+                <input name="2" type="checkbox" />
+                <label for="1" name="2">
+                  is intended for use or has been used as the means of committing a crime.
                 </label>
               </p>
               <p>
-                <input name="1" type="checkbox" />
-                <label for="1" name="checkbox">
-                  has been stolen, embezzled, or obtained by false pretenses.
+                <input name="3" type="checkbox" />
+                <label for="1" name="3">
+                  has been concealed to prevent a crime from being discovered.
                 </label>
               </p>
               <p>
-                <input name="1" type="checkbox" />
-                <label for="1" name="checkbox">
-                  has been stolen, embezzled, or obtained by false pretenses.
+                <input name="4" type="checkbox" />
+                <label for="1" name="4">
+                  is unlawfully possessed or concealed for an unlawful purpose.
                 </label>
+              </p>
+              <p>
+                <input name="5" type="checkbox" />
+                <label for="1" name="5">
+                  is evidence of a crime or is evidence of criminal activity.
+                </label>
+              </p>
+              <p>
+                <input name="6" type="checkbox" />
+                <label for="1" name="6">
+                  other
+                  <i>
+                    (specify)
+                  </i>
+                </label>
+                <input class="other" name="6-1" type="text" />
+                <label for="1" name="6-1"></label>
               </p>
             </blockquote>
           </li>
-        </ul>
+          <li>
+            <p>
+              I am seeking the issuance of a warrant to search for the following property
+              <i>
+                (describe the property to by
+                <br />
+                searched for as particularly as possible)
+              </i>
+            </p>
+            <input class="text-line" name="" type="text" />
+            <input class="text-line" name="" type="text" />
+            <input class="text-line" name="" type="text" />
+            <input class="text-line" name="" type="text" />
+            <input class="text-line" name="" type="text" />
+          </li>
+          <li>
+            <p>
+              Based upon this information, there is also probable cause to believe
+              that the property may be found
+              <i>
+                (check as may as apply)
+              </i>
+              <br />
+              <input name="6" type="checkbox" />
+              <label for="1" name="6">
+                as
+                <i>
+                  (identify the exact location or description of the place(s) to be searched):
+                </i>
+              </label>
+              <input class="text-line" name="" type="text" />
+              <input class="text-line" name="" type="text" />
+            </p>
+          </li>
+        </ol>
       </div>
     </div>
   </form>

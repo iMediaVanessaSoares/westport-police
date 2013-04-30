@@ -35,7 +35,7 @@
             .applicant.box-underline.header-input-box
               %label{:for => "name"} NAME OF APPLICANT
               %input{:type => "text", :name => "name"}
-            .applicant-position.header-input-box
+            .applicant-position.box-thick.header-input-box
               %label{:for => "position"} POSITION OF APPLICANT
               %input{:type => "text", :name => "position"}
           .header-right.pull-right
@@ -144,16 +144,16 @@
             the above described place(s) and person(s), if any, to be searched, and directing that such property or evidnece or
             any part thereof, if found, be seized and brought before the court, together with such other and further relief that 
             the court may deem property.
-            %p
-              %br
-              %input{:type => "checkbox", :name => "10"}
-              have previously submitted the same application.
-              %br
-              %input{:type => "checkbox", :name => "11"}
-              Have
-              %b
-                not
-              previously submitted the same application.
+            %blockquote.tight-paragraphs
+              %p
+                %input{:type => "checkbox", :name => "10"}
+                have previously submitted the same application.
+              %p
+                %input{:type => "checkbox", :name => "11"}
+                Have
+                %b
+                  not
+                previously submitted the same application.
        
     -#:javascript
       window.jQuery || document.write('<\/script>')

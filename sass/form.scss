@@ -47,9 +47,9 @@ input[type=number]::-webkit-inner-spin-button {
   background-size: 100% 20px;
   line-height: 20px;
   font-family: Arial, Helvetica, Sans-serif;
-  background-image: linear-gradient(white, white 19px, brown 19px, brown 20px, white 20px);
+  background-image: linear-gradient(white, white 19px, #A34719 19px, #A34719 20px, white 20px);
   background-image: -o-linear-gradient(white, white 29px, #f95757 29px, #f95757 30px, white 30px);
   background-image: -moz-linear-gradient(white, white 29px, #f95757 29px, #f95757 30px, white 30px);
-  background-image: -webkit-linear-gradient(white, white 19px, brown 19px, brown 20px, white 20px);
+  background-image: -webkit-linear-gradient(white, white 19px, #A34719 19px, #A34719 20px, white 20px);
   background-image: -ms-linear-gradient(white, white 29px, #f95757 29px, #f95757 30px, white 30px);
 }

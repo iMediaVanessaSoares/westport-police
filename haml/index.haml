@@ -27,15 +27,15 @@
 
     .border.center
       %form{ :action => "", :method => "post"}
-        .header
-          .header-left.pull-left.box
-            .title.box-thick
+        .header.thick-bottom
+          .header-left.pull-left
+            .title.thick-left.thick-right.thick-top.thick-bottom.placement-fix.override-header
               %h1 APPLICATION FOR SEARCH WARRANT
               %span.center G.L. c. 276 1-7 
-            .applicant.box-underline.header-input-box
+            .applicant.header-input-box.border-black-right.thick-right.thin-bottom
               %label{:for => "name"} NAME OF APPLICANT
               %input{:type => "text", :name => "name"}
-            .applicant-position.box-thick.header-input-box
+            .applicant-position.header-input-box.border-black-right.thick-right.thin-top
               %label{:for => "position"} POSITION OF APPLICANT
               %input{:type => "text", :name => "position"}
           .header-right.pull-right
@@ -48,7 +48,7 @@
                 %input.box-underline{:type => "text", :name => "division"}
                 %label{:for => "division"} DIVISION
 
-            .docket.header-input-box.box
+            .docket.header-input-box
               %label{:for => "position"} SEARCH WARRANT DOCKET NUMBER
               %input{:type => "text", :name => "position"}
           .clearfix
@@ -98,7 +98,7 @@
                       other
                       %i
                         (specify)
-                    %textarea.taform{:rows => "1", :name => "6-1"}
+                    %input.box-underline{:type => "text", :name => "6-1"}
                     %label{:for => "1", :name => "6-1"}
               %li
                 %p
@@ -154,7 +154,39 @@
                 %b
                   not
                 previously submitted the same application.
-       
+        .foot
+          .sig-upper.thick-top
+            .sig-upper-left.pull-left.thin-right
+              %p
+                %label
+                  PRINTED NAME OF APPLICANT
+                %br
+                %input.box-underline{:type => "text", :name => "12"}
+            .sig-upper-right.pull-right
+              %label
+                SIGNED UNDER THE PENALTIES OF PERJURY
+              %br
+              X
+              %input.box-underline{:type => "text", :name => "13"}
+              %br
+              %label
+                Signature of Applicant
+          .sig-lower
+            .sig-bottom-left.pull-left
+              %label
+                SWORN AND SUBSCRIBED TO BEFORE
+              %br
+              X
+              %input.box-underline{:type => "text", :name => "14"}
+              %br
+              %label
+                Signatures of Justice, Clerk Magistrate or Assistant Clerk
+            .sig-bottom-right.pull-right
+              %input.box-underline{:type => "text", :name => "15"}
+              %br
+              %label
+                Date
+
     -#:javascript
       window.jQuery || document.write('<\/script>')
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

@@ -86,6 +86,8 @@
                     <label for='1' name='2'>
                       is intended for use or has been used as the means of committing a crime.
                     </label>
+                  </p>
+                  <p>
                     <input name='3' type='checkbox' />
                     <label for='1' name='3'>
                       has been concealed to prevent a crime from being discovered.
@@ -125,7 +127,7 @@
                     searched for as particularly as possible)
                   </i>
                   <br />
-                  <textarea class='taform' name='7' rows='5'></textarea>
+                  <textarea class='taform lines' name='7' rows='5'></textarea>
                 </p>
               </li>
               <li>
@@ -144,12 +146,12 @@
                     </i>
                   </label>
                   <br />
-                  <textarea class='taform' name='9' rows='2'></textarea>
+                  <textarea class='taform lines' name='9' rows='2'></textarea>
                 </p>
                 <p>
                   which is occupied by and/or in possession of:
                   <br />
-                  <textarea class='taform' name='10' rows='2'></textarea>
+                  <textarea class='taform lines' name='10' rows='2'></textarea>
                 </p>
                 <p>
                   <input name='11' type='checkbox' />
@@ -158,7 +160,7 @@
                     (identify any specific person(s) to be searched):
                   </i>
                   <br />
-                  <textarea class='taform' name='12' rows='1'></textarea>
+                  <textarea class='taform lines' name='12' rows='1'></textarea>
                 </p>
                 <p>
                   <input name='13' type='checkbox' />
@@ -237,6 +239,131 @@
             </div>
           </div>
         </div>
+      </form>
+    </div>
+    <div class='p2 border center'>
+      <form action='' method='post'>
+        <div class='header med-bottom'>
+          <div class='header-left pull-left thick-top thick-right thick-left thin-bottom placement-fix'>
+            SEARCH WARRANT
+            <br />
+            I DEMAND MORE STYLING!
+          </div>
+          <div class='header-right pull-right'>
+            <div class='court thin-bottom header-right-upper'>
+              <h2>TRIAL COURT OF MASSACHUSETTS</h2>
+              <div class='header-input-box'>
+                <input class='box-underline' name='court_department' type='text' />
+                <label for='court_department'>COURT DEPARTMENT</label>
+              </div>
+              <div class='header-input-box'>
+                <input class='box-underline' name='division' type='text' />
+                <label for='division'>DIVISION</label>
+              </div>
+            </div>
+            <div class='docket header-input-box thin-top'>
+              <label for='position'>SEARCH WARRANT DOCKET NUMBER</label>
+              <input name='position' type='text' />
+            </div>
+          </div>
+        </div>
+        <div class='survay-container'>
+          <div class='questions'>
+            <p>
+              <b>
+                TO THE SHERIFFS OF OUR SEVERAL COUNTIES OR THEIR DEPUTIES, ANY STATE POLICE OFFICER, OR ANY CONSTABLE OR POLICE OFFICER
+                OF ANY CITY OR TOWN, WITHIN OUR COMMONWEALTH:
+              </b>
+            </p>
+            <p>
+              Proof by affidavit which is hereby incorporated by reference, has been made this day and I find that there is
+              <b>
+                PROBABLE CAUSE
+              </b>
+              to believe that the property described below:
+              <blockquote class='tight-paragraphs'>
+                <p>
+                  <input name='1' type='checkbox' />
+                  <label for='1' name='1'>
+                    has been stolen, embezzled, or obtained by false pretenses.
+                  </label>
+                </p>
+                <p>
+                  <input name='2' type='checkbox' />
+                  <label for='1' name='2'>
+                    is intended for use or has been used as the means of committing a crime.
+                  </label>
+                </p>
+                <p>
+                  <input name='3' type='checkbox' />
+                  <label for='1' name='3'>
+                    has been concealed to prevent a crime from being discovered.
+                  </label>
+                </p>
+                <p>
+                  <input name='4' type='checkbox' />
+                  <label for='1' name='4'>
+                    is unlawfully possessed or concealed for an unlawful purpose.
+                  </label>
+                </p>
+                <p>
+                  <input name='5' type='checkbox' />
+                  <label for='1' name='5'>
+                    is evidence of a crime or is evidence of criminal activity.
+                  </label>
+                </p>
+                <p>
+                  <input name='6' type='checkbox' />
+                  <label for='1' name='6'>
+                    other
+                    <i>
+                      (specify)
+                    </i>
+                  </label>
+                  <input class='input-underline' name='6-1' type='text' />
+                  <label for='1' name='6-1'></label>
+                </p>
+              </blockquote>
+            </p>
+            <p>
+              <b>
+                YOU ARE THEREFORE COMMANDED
+              </b>
+              within a reasonable time and in no event later than seven days from the issuance of this search warrant
+              to search for the following property:
+              <p>
+                <textarea class='taform lines' rows='5'></textarea>
+                <ul>
+                  <li>
+                    <input type='checkbox' />
+                    at:
+                    <br />
+                    <textarea class='taform lines' rows='2'></textarea>
+                  </li>
+                  <li>
+                    which is occupied by and/or in possession of:
+                    <textarea class='taform lines' rows='2'></textarea>
+                  </li>
+                  <li>
+                    <input type='checkbox' />
+                    on the person or in the possession of
+                    <i>
+                      (identify any specific person(s) to be searched):
+                    </i>
+                    <input class='input-underline' type='text' />
+                  </li>
+                </ul>
+              </p>
+            </p>
+          </div>
+        </div>
+        <div class='foot'></div>
+      </form>
+    </div>
+    <div class='p2 border center'>
+      <form action='' method='post'>
+        <div class='survay-container'></div>
+        <div class='foot'></div>
       </form>
     </div>
   </body>

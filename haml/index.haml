@@ -78,6 +78,7 @@
                     %input{:type => "checkbox", :name => "2"}
                     %label{:for => "1", :name => "2"}
                       is intended for use or has been used as the means of committing a crime.
+                  %p
                     %input{:type => "checkbox", :name => "3"}
                     %label{:for => "1", :name => "3"}
                       has been concealed to prevent a crime from being discovered.
@@ -105,7 +106,7 @@
                     %br
                     searched for as particularly as possible)
                   %br
-                  %textarea.taform{:rows => "5", :name => "7"}
+                  %textarea.taform.lines{:rows => "5", :name => "7"}
               %li
                 %p
                   Based upon this information, there is also probable cause to believe 
@@ -119,19 +120,19 @@
                     %i
                       (identify the exact location or description of the place(s) to be searched):
                   %br
-                  %textarea.taform{:rows => "2", :name => "9"}
+                  %textarea.taform.lines{:rows => "2", :name => "9"}
                     
                 %p
                   which is occupied by and/or in possession of:
                   %br
-                  %textarea.taform{:rows => "2", :name => "10"}
+                  %textarea.taform.lines{:rows => "2", :name => "10"}
                 %p
                   %input{:type => "checkbox", :name => "11"}
                   on the person or in the possession of 
                   %i
                     (identify any specific person(s) to be searched):
                   %br
-                  %textarea.taform{:rows => "1", :name => "12"}
+                  %textarea.taform.lines{:rows => "1", :name => "12"}
                 %p
                   %input{:type => "checkbox", :name => "13"}
                   on any person present who may be found to have such property in his or hear possession 
@@ -184,6 +185,94 @@
               %br
               %label{:for => "19", :name => "19-1"}
                 Date
+        -#Page 2
+    .p2.border.center
+      %form{:action => "", :method => "post"}
+        .header.med-bottom
+          .header-left.pull-left.thick-top.thick-right.thick-left.thin-bottom.placement-fix
+            SEARCH WARRANT 
+            %br
+            I DEMAND MORE STYLING!
+          .header-right.pull-right
+            .court.thin-bottom.header-right-upper
+              %h2 TRIAL COURT OF MASSACHUSETTS
+              .header-input-box
+                %input.box-underline{:type => "text", :name => "court_department"}
+                %label{:for => "court_department"} COURT DEPARTMENT
+              .header-input-box
+                %input.box-underline{:type => "text", :name => "division"}
+                %label{:for => "division"} DIVISION
+
+            .docket.header-input-box.thin-top
+              %label{:for => "position"} SEARCH WARRANT DOCKET NUMBER
+              %input{:type => "text", :name => "position"}
+        .survay-container
+          .questions
+            %p
+              %b
+                TO THE SHERIFFS OF OUR SEVERAL COUNTIES OR THEIR DEPUTIES, ANY STATE POLICE OFFICER, OR ANY CONSTABLE OR POLICE OFFICER
+                OF ANY CITY OR TOWN, WITHIN OUR COMMONWEALTH:
+            %p
+              Proof by affidavit which is hereby incorporated by reference, has been made this day and I find that there is
+              %b
+                PROBABLE CAUSE
+              to believe that the property described below:
+              %blockquote.tight-paragraphs
+                %p
+                  %input{:type => "checkbox", :name => "1"}
+                  %label{:for => "1", :name => "1"}
+                    has been stolen, embezzled, or obtained by false pretenses.
+                %p
+                  %input{:type => "checkbox", :name => "2"}
+                  %label{:for => "1", :name => "2"}
+                    is intended for use or has been used as the means of committing a crime.
+                %p
+                  %input{:type => "checkbox", :name => "3"}
+                  %label{:for => "1", :name => "3"}
+                    has been concealed to prevent a crime from being discovered.
+                %p
+                  %input{:type => "checkbox", :name => "4"}
+                  %label{:for => "1", :name => "4"}
+                    is unlawfully possessed or concealed for an unlawful purpose.
+                %p
+                  %input{:type => "checkbox", :name => "5"}
+                  %label{:for => "1", :name => "5"}
+                    is evidence of a crime or is evidence of criminal activity.
+                %p
+                  %input{:type => "checkbox", :name => "6"}
+                  %label{:for => "1", :name => "6"}
+                    other
+                    %i
+                      (specify)
+                  %input.input-underline{:type => "text", :name => "6-1"}
+                  %label{:for => "1", :name => "6-1"}
+            %p
+              %b
+                YOU ARE THEREFORE COMMANDED
+              within a reasonable time and in no event later than seven days from the issuance of this search warrant
+              to search for the following property:
+              %p
+                %textarea.taform.lines{:rows => "5"}
+                %ul
+                  %li
+                    %input{:type => "checkbox"}
+                    at:
+                    %br
+                    %textarea.taform.lines{:rows => "2"}
+                  %li
+                    which is occupied by and/or in possession of:
+                    %textarea.taform.lines{:rows => "2"}
+                  %li
+                    %input{:type =>"checkbox"}
+                    on the person or in the possession of
+                    %i
+                      (identify any specific person(s) to be searched):
+                    %input.input-underline{:type => "text"}
+        .foot
+    .p2.border.center
+      %form{:action => "", :method => "post"}
+        .survay-container
+        .foot
 
     -#:javascript
       window.jQuery || document.write('<\/script>')

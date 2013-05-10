@@ -190,7 +190,9 @@
       %form{:action => "", :method => "post"}
         .header.med-bottom
           .header-left.pull-left.thick-top.thick-right.thick-left.thin-bottom.placement-fix
-            SEARCH WARRANT 
+            SEARCH WARRANT
+            %br
+            G.L. c. 276, symbolx2 1-7
             %br
             I DEMAND MORE STYLING!
           .header-right.pull-right
@@ -268,11 +270,157 @@
                     %i
                       (identify any specific person(s) to be searched):
                     %input.input-underline{:type => "text"}
-        .foot
+                  %li
+                    %p
+                      You 
+                      %input{:type => "checkbox"}
+                      are
+                      %input{:type => "checkbox"}
+                      are not   also authorized to conduct the search at any time during the night.
+                  %li
+                    %p
+                      You 
+                      %input{:type => "checkbox"}
+                      are
+                      %input{:type => "checkbox"}
+                      are not   also authorized to enter the premises without announcement.
+                  %li
+                    %p
+                      You 
+                      %input{:type => "checkbox"}
+                      are
+                      %input{:type => "checkbox"}
+                      are not   also commanded to search any person present who may be found to have such
+                      property in his or her possession or under his or her control or to whom such property
+                      may have been delivered.
+                  %li
+                    %p
+                      %b
+                        YOU ARE FURTHER COMMANDED
+                      if you find such property or any part thereof, to bring it, and when appropriate, the persons in
+                      whose possession is is found before the
+                  %li
+                    %p
+                      %input.box-underline{:type => "text"}
+                      Division of the
+                      %input.box-underline{:type => "text"}
+                      Court Department.
+        .foot.thick-top
+          .sig-upper
+            .sig-upper-left.pull-left.thin-right
+              DATE ISSUED
+              %input{:type => "text"}
+            .sig-upper-right.pull-right.thin-left
+              SIGNATURE OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
+              %b
+                X
+              %input.input-underline{:type => "text"}
+          .sig-lower
+            .sig-bottom-left.pull-left
+              FIRST OR ADMINISTRATIVE JUSTICE
+              %b
+                WITNESS:
+              %input.input-underline{:type => "text"}
+            .sig-bottom-right.pull-right
+              PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
+              %input.input-underline{:type => "text"}
     .p2.border.center
       %form{:action => "", :method => "post"}
         .survay-container
-        .foot
+          %p
+            %b
+              RETURN OF OFFICER SERVING SEARCH WARRANT
+          %p
+            %i
+              A search warrant must be executed as soon as reasonably possible after its issuance, and in any case may not be valid executed more than 
+              7 days after its issuance. The executing officer must file his or her return with the court named in the warrant within 7 days after the warrant is issued. 
+              G.L. c. 276, somesymbol 3A.
+          %p
+            This search warrant was issued on
+            %input.box-underline{:type => "text"},
+            %label
+              DATE
+            20
+            %input.box-underline{:type => "text"},
+            and I have executed it as follows:
+          %ol
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+            %li
+              %input.input-underline{:type => "text"}
+              %label
+                (attach additional pages as necessary)
+          %p
+            This inventory was made in the presence of:
+            %input.input-underline{:type => "text"}
+            %br
+            %input.input-underline{:type => "text"}
+          %p
+            I swear that this inventory is a true and detailed account of all property
+            taken by me on this search warrant.
+        .foot2.thick-top
+          .sig-upper
+            .sig-upper-left.pull-left.thin-right
+              SIGNATURE OF PERSON MAKING SEARCH
+              %b
+                X
+              %input.input-underline{:type => "text"}
+            .sig-upper-mid.pull-left.thin-left.thin-right
+              DATE AND TIME OF SEARCH
+              %input{:type => "text"}
+            .sig-upper-right.pull-right.thin-left
+              SWORN AND SUBSCRIBED TO BEFORE
+              %b
+                X
+              %input.input-underline{:type => "text"}
+              %label
+                Signature of Justice, Clerk-Magistrate or Assistant Clerk
+          .sig-lower
+            .sig-lower-left
+              PRINTED NAME OF PERSON MAKING SEARCH
+              %input{:type => "text"}
+            .sig-lower-mid
+              TITLE OF PERSON MAKING SEARCH
+              %input{:type => "text"}
+            .sig-lower-right
+              DATE SWORN AND SUBSCRIBED TO
+              %input{:type => "text"}
 
     -#:javascript
       window.jQuery || document.write('<\/script>')

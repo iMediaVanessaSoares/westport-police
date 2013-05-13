@@ -31,7 +31,7 @@
           .header-left.pull-left
             .title.thick-left.thick-right.thick-top.thick-bottom.placement-fix.override-header
               %h1 APPLICATION FOR SEARCH WARRANT
-              %span.center G.L. c. 276 &sect;&sect; 1-7 
+              %span.center G.L. c. 276 1-7 
             .applicant.header-input-box.border-black-right.thick-right.thin-bottom.header-left-width
               %label{:for => "name"} NAME OF APPLICANT
               %input{:type => "text", :name => "name"}
@@ -40,9 +40,7 @@
               %input{:type => "text", :name => "position"}
           .header-right.pull-right
             .court.thin-bottom.header-right-upper
-              %h2
-                TRIAL COURT OF MASSACHUSETTS
-                %img.seal{:src => "img/state_seal_bw.jpg"}
+              %h2 TRIAL COURT OF MASSACHUSETTS
               .header-input-box
                 %input.box-underline{:type => "text", :name => "court_department"}
                 %label{:for => "court_department"} COURT DEPARTMENT
@@ -194,7 +192,7 @@
           .header-left.pull-left.thick-top.thick-right.thick-left.thin-bottom.placement-fix
             SEARCH WARRANT
             %br
-            G.L. c. 276, &sect;&sect; 1-7
+            G.L. c. 276, symbolx2 1-7
             %br
             I DEMAND MORE STYLING!
           .header-right.pull-right
@@ -312,12 +310,10 @@
             .sig-upper-left.pull-left.thin-right
               %label
                 DATE ISSUED
-              %br
               %input{:type => "text"}
             .sig-upper-right.pull-right.thin-left
               %label
                 SIGNATURE OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
-              %br
               %b
                 X
               %input.input-underline{:type => "text"}
@@ -325,14 +321,12 @@
             .sig-bottom-left.pull-left
               %label
                 FIRST OR ADMINISTRATIVE JUSTICE
-              %br
               %b
                 WITNESS:
               %input.input-underline{:type => "text"}
             .sig-bottom-right.pull-right
               %label
                 PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
-              %br
               %input.input-underline{:type => "text"}
     .p2.border.center
       %form{:action => "", :method => "post"}
@@ -344,7 +338,7 @@
             %i
               A search warrant must be executed as soon as reasonably possible after its issuance, and in any case may not be valid executed more than 
               7 days after its issuance. The executing officer must file his or her return with the court named in the warrant within 7 days after the warrant is issued. 
-              G.L. c. 276, &sect;3A.
+              G.L. c. 276, somesymbol 3A.
           %p
             This search warrant was issued on
             %input.box-underline{:type => "text"},
@@ -405,43 +399,37 @@
             I swear that this inventory is a true and detailed account of all property
             taken by me on this search warrant.
         .foot2.thick-top
-          .sig-upper.thin-bottom
-            .sig-left.pull-left.thin-right
+          .sig-upper
+            .sig-upper-left.pull-left.thin-right
               %label
                 SIGNATURE OF PERSON MAKING SEARCH
-              %br
               %b
                 X
               %input.input-underline{:type => "text"}
-            .sig-mid.pull-left.thin-left.thin-right
+            .sig-upper-mid.pull-left.thin-left.thin-right
               %label
                 DATE AND TIME OF SEARCH
-              %br
               %input{:type => "text"}
-            .sig-right.pull-right.thin-left
+            .sig-upper-right.pull-right.thin-left
               %label
                 SWORN AND SUBSCRIBED TO BEFORE
-              %br
               %b
                 X
               %input.input-underline{:type => "text"}
               %label
                 Signature of Justice, Clerk-Magistrate or Assistant Clerk
-          .sig-lower.thin-top
-            .sig-left.pull-left.thin-right
+          .sig-lower
+            .sig-lower-left
               %label
                 PRINTED NAME OF PERSON MAKING SEARCH
-              %br
               %input{:type => "text"}
-            .sig-mid.pull-left.thin-left.thin-right
+            .sig-lower-mid
               %label
                 TITLE OF PERSON MAKING SEARCH
-              %br
               %input{:type => "text"}
-            .sig-right.pull-right.thin-left
+            .sig-lower-right
               %label
                 DATE SWORN AND SUBSCRIBED TO
-              %br
               %input{:type => "text"}
 
     -#:javascript

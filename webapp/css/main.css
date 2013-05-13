@@ -418,6 +418,12 @@ input[type=number]::-webkit-inner-spin-button {
   border-bottom: 1px solid #A34719;
   width: 80%; }
 
+.seal {
+  width: 1cm;
+  height: 1cm;
+  position: absolute;
+  margin-left: 2cm; }
+
 .thin-bottom {
   border-bottom: 1px solid; }
 
@@ -469,3 +475,16 @@ input[type=number]::-webkit-inner-spin-button {
   width: 29%; }
 .foot label {
   font-size: 7pt; }
+
+.foot2 .sig-upper {
+  height: 2cm; }
+.foot2 .sig-left {
+  width: 33%; }
+.foot2 .sig-mid {
+  width: 33%; }
+.foot2 .sig-right {
+  width: 33.5%; }
+.foot2 label {
+  font-size: 7pt; }
+.foot2 div {
+  height: 2cm; }

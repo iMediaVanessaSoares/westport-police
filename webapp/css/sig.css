@@ -7,8 +7,21 @@
   width: 49.5%;
   padding-left: 0px; }
 .p2 .foot .sig-bottom-right {
-  width: 50.25%; }
+  width: 50.25%;
+  padding-top: 0cm; }
+.p2 .foot .sig-lower {
+  height: 55px; }
+  .p2 .foot .sig-lower div {
+    height: 100%; }
 
+.foot .sigapp-center {
+  width: 9cm;
+  display: block;
+  text-align: center; }
+.foot .sigdate-center {
+  width: 5cm;
+  display: block;
+  text-align: center; }
 .foot .sig-upper-left {
   width: 390px;
   padding-left: 6px; }

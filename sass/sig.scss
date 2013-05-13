@@ -20,11 +20,36 @@
   .sig-bottom-right
   {
     width: 50.25%;
+    padding-top: 0cm;
+  }
+
+  .sig-lower
+  {
+    height:55px;
+
+    div
+    {
+      height:100%;
+    }
   }
 }
 
 .foot
 {
+
+.sigapp-center
+{
+  width: 9cm;
+  display: block;
+  text-align: center;
+}
+
+.sigdate-center
+{
+  width: 5cm;
+  display: block;
+  text-align: center;
+}
 
 .sig-upper-left
 {

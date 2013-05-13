@@ -170,7 +170,7 @@
                 X
               %input.input-underline{:type => "text", :name => "17"}
               %br
-              %label{:for => "17", :name => "17-2"}
+              %label.sigapp-center{:for => "17", :name => "17-2"}
                 Signature of Applicant
           .sig-lower.thin-top
             .sig-bottom-left.pull-left
@@ -186,7 +186,7 @@
             .sig-bottom-right.pull-right
               %input.input-underline{:type => "text", :name => "19"}
               %br
-              %label{:for => "19", :name => "19-1"}
+              %label.sigdate-center{:for => "19", :name => "19-1"}
                 DATE
         -#Page 2
     .p2.border.center
@@ -212,7 +212,7 @@
               %input{:type => "text", :name => "position"}
         .survay-container
           .questions
-            %p
+            %p.font-override
               %b
                 TO THE SHERIFFS OF OUR SEVERAL COUNTIES OR THEIR DEPUTIES, ANY STATE POLICE OFFICER, OR ANY CONSTABLE OR POLICE OFFICER
                 OF ANY CITY OR TOWN, WITHIN OUR COMMONWEALTH:
@@ -328,7 +328,7 @@
               %br
               %b
                 WITNESS:
-              %input.input-underline{:type => "text"}
+              %input{:type => "text"}
             .sig-bottom-right.pull-right.thin-left
               %label
                 PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
@@ -348,11 +348,12 @@
           %p
             This search warrant was issued on
             %input.box-underline{:type => "text"},
-            %label
-              DATE
             20
             %input.box-underline{:type => "text"},
             and I have executed it as follows:
+          %br
+          %label
+            DATE
           %ol
             %li
               %input.input-underline{:type => "text"}
@@ -394,8 +395,8 @@
               %input.input-underline{:type => "text"}
             %li
               %input.input-underline{:type => "text"}
-              %label
-                (attach additional pages as necessary)
+          %label
+            (attach additional pages as necessary)
           %p
             This inventory was made in the presence of:
             %input.input-underline{:type => "text"}

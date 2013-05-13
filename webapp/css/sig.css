@@ -1,3 +1,14 @@
+.p2 .foot .sig-upper-left {
+  width: 49.5%;
+  padding-left: 0px; }
+.p2 .foot .sig-upper-right {
+  width: 50.25%; }
+.p2 .foot .sig-bottom-left {
+  width: 49.5%;
+  padding-left: 0px; }
+.p2 .foot .sig-bottom-right {
+  width: 50.25%; }
+
 .foot .sig-upper-left {
   width: 390px;
   padding-left: 6px; }
@@ -14,9 +25,10 @@
   margin-right: auto; }
 .foot .sig-bottom-left {
   width: 60%;
-  padding-left: 25px; }
+  padding-left: 2.37cm; }
 .foot .sig-bottom-right {
-  width: 29%; }
+  width: 29%;
+  padding-top: .3cm; }
 .foot label {
   font-size: 7pt; }
 

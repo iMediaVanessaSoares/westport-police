@@ -354,6 +354,15 @@ input {
   height: 96.9%;
   width: 11.34cm; }
 
+.p2 h1 {
+  text-align: center; }
+
+.p2 .title-span {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  font-size: 12pt; }
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -454,6 +463,17 @@ input[type=number]::-webkit-inner-spin-button {
 .med-bottom {
   border-bottom: 2px solid; }
 
+.p2 .foot .sig-upper-left {
+  width: 49.5%;
+  padding-left: 0px; }
+.p2 .foot .sig-upper-right {
+  width: 50.25%; }
+.p2 .foot .sig-bottom-left {
+  width: 49.5%;
+  padding-left: 0px; }
+.p2 .foot .sig-bottom-right {
+  width: 50.25%; }
+
 .foot .sig-upper-left {
   width: 390px;
   padding-left: 6px; }
@@ -470,9 +490,10 @@ input[type=number]::-webkit-inner-spin-button {
   margin-right: auto; }
 .foot .sig-bottom-left {
   width: 60%;
-  padding-left: 25px; }
+  padding-left: 2.37cm; }
 .foot .sig-bottom-right {
-  width: 29%; }
+  width: 29%;
+  padding-top: .3cm; }
 .foot label {
   font-size: 7pt; }
 

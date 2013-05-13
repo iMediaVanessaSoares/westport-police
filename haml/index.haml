@@ -14,6 +14,7 @@
   / Place favicon.ico and apple-touch-icon.png in the root directory
   %link{:href => "css/normalize.css", :rel => "stylesheet"}
   %link{:href => "css/main.css", :rel => "stylesheet"}
+  %script{:src => "js/vendor/jquery-1.9.1.min.js"}
   %script{:src => "js/vendor/modernizr-2.6.2.min.js"}
   %body
     /[if lt IE 7]
@@ -186,17 +187,16 @@
               %input.input-underline{:type => "text", :name => "19"}
               %br
               %label{:for => "19", :name => "19-1"}
-                Date
+                DATE
         -#Page 2
     .p2.border.center
       %form{:action => "", :method => "post"}
         .header.med-bottom
           .header-left.pull-left.thick-top.thick-right.thick-left.thin-bottom.placement-fix
-            SEARCH WARRANT
-            %br
-            G.L. c. 276, &sect;&sect; 1-7
-            %br
-            I DEMAND MORE STYLING!
+            %h1.center
+              SEARCH WARRANT
+            %span.center.title-span
+              G.L. c. 276, &sect;&sect; 1-7
           .header-right.pull-right
             .court.thin-bottom.header-right-upper
               %h2 TRIAL COURT OF MASSACHUSETTS
@@ -308,7 +308,7 @@
                       %input.box-underline{:type => "text"}
                       Court Department.
         .foot.thick-top
-          .sig-upper
+          .sig-upper.thin-bottom
             .sig-upper-left.pull-left.thin-right
               %label
                 DATE ISSUED
@@ -321,15 +321,15 @@
               %b
                 X
               %input.input-underline{:type => "text"}
-          .sig-lower
-            .sig-bottom-left.pull-left
+          .sig-lower.thin-top
+            .sig-bottom-left.pull-left.thin-right
               %label
                 FIRST OR ADMINISTRATIVE JUSTICE
               %br
               %b
                 WITNESS:
               %input.input-underline{:type => "text"}
-            .sig-bottom-right.pull-right
+            .sig-bottom-right.pull-right.thin-left
               %label
                 PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
               %br

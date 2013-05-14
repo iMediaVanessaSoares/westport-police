@@ -349,16 +349,15 @@
               A search warrant must be executed as soon as reasonably possible after its issuance, and in any case may not be valid executed more than 
               7 days after its issuance. The executing officer must file his or her return with the court named in the warrant within 7 days after the warrant is issued. 
               G.L. c. 276, &sect;3A.
-          %p
+          %p.p3mfix
             This search warrant was issued on
-            %input.box-underline{:type => "text"},
+            %input.box-underline.p3l1{:type => "text"},
             20
-            %input.box-underline{:type => "text"},
+            %input.box-underline.p3l2{:type => "text"},
             and I have executed it as follows:
-          %br
-          %label
+          %label.labeladj
             DATE
-          %ol
+          %ol.p3mfix.p3ol
             %li
               %input.input-underline{:type => "text"}
             %li
@@ -399,30 +398,32 @@
               %input.input-underline{:type => "text"}
             %li
               %input.input-underline{:type => "text"}
-          %label
+          %label.labeladj
             (attach additional pages as necessary)
-          %p
+          %p.pfix2
             This inventory was made in the presence of:
-            %input.input-underline{:type => "text"}
+            %input.input-underline.ic1{:type => "text"}
             %br
-            %input.input-underline{:type => "text"}
-          %p
+            %input.input-underline.ic2{:type => "text"}
+          %p.final-statement
             I swear that this inventory is a true and detailed account of all property
             taken by me on this search warrant.
         .foot2.thick-top
           .sig-upper.thin-bottom
             .sig-left.pull-left.thin-right
-              %label
-                SIGNATURE OF PERSON MAKING SEARCH
-              %br
-              %b
-                X
-              %input.input-underline{:type => "text"}
+              %p.pfix
+                %label
+                  SIGNATURE OF PERSON MAKING SEARCH
+                %p.pfix
+                  %b
+                    X
+                  %input.input-underline{:type => "text"}
             .sig-mid.pull-left.thin-left.thin-right
-              %label
-                DATE AND TIME OF SEARCH
-              %br
-              %input{:type => "text"}
+              %p.pfix
+                %label
+                  DATE AND TIME OF SEARCH
+                %p.pfix
+                  %input.sifix{:type => "text"}
             .sig-right.pull-right.thin-left
               %label
                 SWORN AND SUBSCRIBED TO BEFORE

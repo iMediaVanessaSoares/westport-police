@@ -119,7 +119,7 @@
                   %br
                   %input{:type => "checkbox", :name => "8"}
                   %label{:for => "1", :name => "8-1"}
-                    as
+                    at
                     %i
                       (identify the exact location or description of the place(s) to be searched):
                   %br
@@ -135,7 +135,7 @@
                   %i
                     (identify any specific person(s) to be searched):
                   %br
-                  %textarea.taform.lines{:rows => "1", :name => "12"}
+                  %input.input-underline{:type => "text", :name => "12"}
                 %p
                   %input{:type => "checkbox", :name => "13"}
                   on any person present who may be found to have such property in his or hear possession 
@@ -155,7 +155,7 @@
                 %b
                   not
                 previously submitted the same application.
-        .foot
+        .foot.ffix
           .sig-upper.thick-top.thin-bottom
             .sig-upper-left.pull-left.thin-right
               %label{:for => "16", :name =>"16-1"}
@@ -256,22 +256,22 @@
               within a reasonable time and in no event later than seven days from the issuance of this search warrant
               to search for the following property:
               %p
-                %textarea.taform.lines{:rows => "5"}
+                %textarea.taform.lines{:rows => "5", :name => "7"}
                 %ul
                   %li
-                    %input{:type => "checkbox"}
+                    %input{:type => "checkbox", :name => "8"}
                     at:
                     %br
-                    %textarea.taform.lines{:rows => "2"}
+                    %textarea.taform.lines{:rows => "2", :name => "9"}
                   %li
                     which is occupied by and/or in possession of:
-                    %textarea.taform.lines{:rows => "2"}
+                    %textarea.taform.lines{:rows => "2", :name => "10"}
                   %li
-                    %input{:type =>"checkbox"}
+                    %input{:type =>"checkbox", :name => "11"}
                     on the person or in the possession of
                     %i
                       (identify any specific person(s) to be searched):
-                    %input.input-underline{:type => "text"}
+                    %input.input-underline{:type => "text", :name => "12"}
                   %li
                     %p
                       You 
@@ -303,37 +303,41 @@
                       whose possession is is found before the
                   %li
                     %p
-                      %input.box-underline{:type => "text"}
+                      %input.box-underline.infix{:type => "text"}
                       Division of the
-                      %input.box-underline{:type => "text"}
+                      %input.box-underline.infix{:type => "text"}
                       Court Department.
         .foot.thick-top
           .sig-upper.thin-bottom
             .sig-upper-left.pull-left.thin-right
-              %label
-                DATE ISSUED
-              %br
-              %input{:type => "text"}
+              %p.pfix
+                %label
+                  DATE ISSUED
+                %p.pfix
+                  %input.sifix{:type => "text"}
             .sig-upper-right.pull-right.thin-left
-              %label
-                SIGNATURE OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
-              %br
-              %b
-                X
-              %input.input-underline{:type => "text"}
+              %p.pfix
+                %label
+                  SIGNATURE OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
+                %p.pfix
+                  %b
+                    X
+                  %input.input-underline{:type => "text"}
           .sig-lower.thin-top
             .sig-bottom-left.pull-left.thin-right
-              %label
-                FIRST OR ADMINISTRATIVE JUSTICE
-              %br
-              %b
-                WITNESS:
-              %input{:type => "text"}
+              %p.pfix
+                %label
+                  FIRST OR ADMINISTRATIVE JUSTICE
+                %p.pfix
+                  %b
+                    WITNESS:
+                  %input.input-underline{:type => "text"}
             .sig-bottom-right.pull-right.thin-left
-              %label
-                PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
-              %br
-              %input.input-underline{:type => "text"}
+              %p.pfix
+                %label
+                  PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
+                %p.pfix
+                  %input.sifix{:type => "text"}
     .p2.border.center
       %form{:action => "", :method => "post"}
         .survay-container

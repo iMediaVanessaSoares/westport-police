@@ -436,6 +436,10 @@ input[type=number]::-webkit-inner-spin-button {
 .font-override {
   font-size: 13pt; }
 
+.infix {
+  border-color: #A34719;
+  width: 7cm; }
+
 .thin-bottom {
   border-bottom: 1px solid; }
 
@@ -481,6 +485,8 @@ input[type=number]::-webkit-inner-spin-button {
   height: 55px; }
   .p2 .foot .sig-lower div {
     height: 100%; }
+.p2 .foot .input-underline {
+  width: 60%; }
 
 .foot .sigapp-center {
   width: 9cm;
@@ -525,3 +531,15 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 7pt; }
 .foot2 div {
   height: 2cm; }
+
+.ffix {
+  padding-top: .6cm; }
+
+.pfix {
+  margin-top: .1cm;
+  margin-left: .3cm;
+  margin-bottom: .2cm; }
+
+.sifix {
+  height: 1.5em;
+  width: 90%; }

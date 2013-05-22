@@ -431,7 +431,8 @@ input[type=number]::-webkit-inner-spin-button {
   width: 1cm;
   height: 1cm;
   position: absolute;
-  margin-left: 2cm; }
+  margin-left: 2cm;
+  top: .05cm; }
 
 .font-override {
   font-size: 13pt; }
@@ -556,9 +557,9 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 7pt; }
 
 .foot2 {
-  margin-top: 5.5cm; }
+  margin-top: 6.5cm; }
   .foot2 .sig-upper {
-    height: 2cm; }
+    height: 1.5cm; }
   .foot2 .sig-left {
     width: 33%; }
   .foot2 .sig-mid {
@@ -568,7 +569,7 @@ input[type=number]::-webkit-inner-spin-button {
   .foot2 label {
     font-size: 7pt; }
   .foot2 div {
-    height: 2cm; }
+    height: 1.5cm; }
 
 .ffix {
   padding-top: .6cm; }

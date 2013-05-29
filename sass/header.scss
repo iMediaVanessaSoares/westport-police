@@ -124,28 +124,81 @@ input {
 .p2
 {
   margin-top: 2cm;
+
+
+  .header
+  {
+    height: 3.55cm;
+  }
+
+  .header-left
+  {
+    height: 96.9%;
+    width: 11.34cm;
+  }
+
+  h1
+  {
+    text-align: center;
+  }
+
+  .title-span
+  {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: 12pt;
+  }
 }
 
-.p2 .header
+.p3
 {
-  height: 3.55cm;
-}
+  margin-top: 2cm;
 
-.p2 .header-left
-{
-  height: 96.9%;
-  width: 11.34cm;
-}
+  .upper
+  {
+    height: 1.5cm;
+  }
 
-.p2 h1
-{
-  text-align: center;
-}
+  .mid
+  {
+    height: 1cm;
+  }
 
-.p2 .title-span
-{
-  text-align: center;
-  display: block;
-  font-weight: bold;
-  font-size: 12pt;
+  .section
+  {
+    width: 33%;
+  }
+
+  .header
+  {
+    height:2.5cm;
+
+    div
+    {
+      height: 100%;
+    }
+  }
+
+  textarea
+  {
+    width:99%;
+  }
+
+  .survay-container
+  {
+    margin-left: 0em;
+  }
+
+  .foot
+  {
+    .left
+    {
+      width: 50%;
+    }
+    .right
+    {
+      width:49.65%;
+    }
+  }
 }

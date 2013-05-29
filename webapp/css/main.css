@@ -346,22 +346,39 @@ input {
 
 .p2 {
   margin-top: 2cm; }
+  .p2 .header {
+    height: 3.55cm; }
+  .p2 .header-left {
+    height: 96.9%;
+    width: 11.34cm; }
+  .p2 h1 {
+    text-align: center; }
+  .p2 .title-span {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: 12pt; }
 
-.p2 .header {
-  height: 3.55cm; }
-
-.p2 .header-left {
-  height: 96.9%;
-  width: 11.34cm; }
-
-.p2 h1 {
-  text-align: center; }
-
-.p2 .title-span {
-  text-align: center;
-  display: block;
-  font-weight: bold;
-  font-size: 12pt; }
+.p3 {
+  margin-top: 2cm; }
+  .p3 .upper {
+    height: 1.5cm; }
+  .p3 .mid {
+    height: 1cm; }
+  .p3 .section {
+    width: 33%; }
+  .p3 .header {
+    height: 2.5cm; }
+    .p3 .header div {
+      height: 100%; }
+  .p3 textarea {
+    width: 99%; }
+  .p3 .survay-container {
+    margin-left: 0em; }
+  .p3 .foot .left {
+    width: 50%; }
+  .p3 .foot .right {
+    width: 49.65%; }
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {

@@ -16,6 +16,7 @@
   %link{:href => "css/main.css", :rel => "stylesheet"}
   %script{:src => "js/vendor/jquery-1.9.1.min.js"}
   %script{:src => "js/vendor/modernizr-2.6.2.min.js"}
+  %script{:src => "js/main.js"}
   %body
     /[if lt IE 7]
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -201,15 +202,15 @@
             .court.thin-bottom.header-right-upper
               %h2 TRIAL COURT OF MASSACHUSETTS
               .header-input-box
-                %input.box-underline{:type => "text", :name => "court_department"}
+                %input.box-underline{:type => "text", :name => "court_department-g"}
                 %label{:for => "court_department"} COURT DEPARTMENT
               .header-input-box
-                %input.box-underline{:type => "text", :name => "division"}
+                %input.box-underline{:type => "text", :name => "division-g"}
                 %label{:for => "division"} DIVISION
 
             .docket.header-input-box.thin-top
               %label{:for => "position"} SEARCH WARRANT DOCKET NUMBER
-              %input{:type => "text", :name => "position"}
+              %input{:type => "text", :name => "position-g"}
         .survay-container
           .questions
             %p.font-override
@@ -223,32 +224,32 @@
               to believe that the property described below:
               %blockquote.tight-paragraphs
                 %p
-                  %input{:type => "checkbox", :name => "1"}
+                  %input{:type => "checkbox", :name => "1-g"}
                   %label{:for => "1", :name => "1"}
                     has been stolen, embezzled, or obtained by false pretenses.
                 %p
-                  %input{:type => "checkbox", :name => "2"}
+                  %input{:type => "checkbox", :name => "2-g"}
                   %label{:for => "1", :name => "2"}
                     is intended for use or has been used as the means of committing a crime.
                 %p
-                  %input{:type => "checkbox", :name => "3"}
+                  %input{:type => "checkbox", :name => "3-g"}
                   %label{:for => "1", :name => "3"}
                     has been concealed to prevent a crime from being discovered.
                 %p
-                  %input{:type => "checkbox", :name => "4"}
+                  %input{:type => "checkbox", :name => "4-g"}
                   %label{:for => "1", :name => "4"}
                     is unlawfully possessed or concealed for an unlawful purpose.
                 %p
-                  %input{:type => "checkbox", :name => "5"}
+                  %input{:type => "checkbox", :name => "5-g"}
                   %label{:for => "1", :name => "5"}
                     is evidence of a crime or is evidence of criminal activity.
                 %p
-                  %input{:type => "checkbox", :name => "6"}
+                  %input{:type => "checkbox", :name => "6-g"}
                   %label{:for => "1", :name => "6"}
                     other
                     %i
                       (specify)
-                  %input.input-underline{:type => "text", :name => "6-1"}
+                  %input.input-underline{:type => "text", :name => "6-1-g"}
                   %label{:for => "1", :name => "6-1"}
             %p
               %b
@@ -256,22 +257,22 @@
               within a reasonable time and in no event later than seven days from the issuance of this search warrant
               to search for the following property:
               %p
-                %textarea.taform.lines{:rows => "5", :name => "7"}
+                %textarea.taform.lines{:rows => "5", :name => "7-g"}
                 %ul
                   %li
-                    %input{:type => "checkbox", :name => "8"}
+                    %input{:type => "checkbox", :name => "8-g"}
                     at:
                     %br
-                    %textarea.taform.lines{:rows => "2", :name => "9"}
+                    %textarea.taform.lines{:rows => "2", :name => "9-g"}
                   %li
                     which is occupied by and/or in possession of:
-                    %textarea.taform.lines{:rows => "2", :name => "10"}
+                    %textarea.taform.lines{:rows => "2", :name => "10-g"}
                   %li
-                    %input{:type =>"checkbox", :name => "11"}
+                    %input{:type =>"checkbox", :name => "11-g"}
                     on the person or in the possession of
                     %i
                       (identify any specific person(s) to be searched):
-                    %input.input-underline{:type => "text", :name => "12"}
+                    %input.input-underline{:type => "text", :name => "12-g"}
                   %li
                     %p
                       You 
@@ -338,6 +339,49 @@
                   PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
                 %p.pfix
                   %input.sifix{:type => "text"}
+    .p2.border.center
+      %form{:action => "", :method => "post"}
+        .header.thick-bottom
+          .left.float-left.thin-right
+            %p
+              Affidavit In Support of Application For Search Warrant
+          .mid.float-left.thin-right.thin-left
+            %p
+              %label
+                Search Warrant Docket Number
+              %input{:type => "text"}
+          .right.float-right.thin-left
+            %p
+              %label
+                Trial Court of Massachusetts
+              %input{:type => "text"}
+        .survay-container
+          %textarea.taform
+          .foot
+            .upper.thick-top.thin-bottom
+              .left.float-left
+                %p
+                  %label
+                    Printed Name of Affiant
+                  %input{:type => "text"}
+              .right.float-right
+                %p
+                  %label
+                    Signed Under The Pains And Penalty of Perjury
+                  %input{:type => "text"}
+            .mid.thin-bottom.thin-top
+            .lower.thin-top
+              %p
+                Signature of Justice, Clerk Magistrate or Assistant Clerk
+                %input{:type => "text"}
+                Date
+                %input{:type => "text"}
+                %br
+                Page
+                %input{:type => "text"}
+                of
+                %input{:type => "text"}
+                Pages of this Affidavit
     .p2.border.center
       %form{:action => "", :method => "post"}
         .survay-container

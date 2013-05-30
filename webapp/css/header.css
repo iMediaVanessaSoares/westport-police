@@ -125,6 +125,13 @@ input {
   margin-top: 2cm; }
   .p3 .upper {
     height: 1.5cm; }
+  .p3 .phfix {
+    margin-top: 0em;
+    margin-left: .2em; }
+    .p3 .phfix input {
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+      width: 99%; }
   .p3 .mid {
     height: 1cm; }
   .p3 .section {
@@ -133,10 +140,21 @@ input {
     height: 2.5cm; }
     .p3 .header div {
       height: 100%; }
+    .p3 .header .left {
+      text-align: center; }
   .p3 textarea {
     width: 99%; }
   .p3 .survay-container {
     margin-left: 0em; }
+  .p3 .foot label {
+    font-size: 12pt; }
+  .p3 .foot .upper input {
+    padding-left: 1%;
+    margin-top: .5em;
+    width: 99%;
+    font-size: 14pt; }
+  .p3 .foot .lower {
+    padding-top: .5em; }
   .p3 .foot .left {
     width: 50%;
     height: 100%; }
@@ -146,3 +164,5 @@ input {
   .p3 .foot p {
     margin-top: 0em;
     margin-bottom: 0em; }
+  .p3 .foot .center {
+    text-align: center; }

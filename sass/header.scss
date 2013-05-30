@@ -160,6 +160,18 @@ input {
     height: 1.5cm;
   }
 
+  .phfix
+  {
+    margin-top:0em;
+    margin-left:.2em;
+    input
+    {
+      padding-top:1.5em;
+      padding-bottom:1.5em;
+      width:99%;
+    }
+  }
+
   .mid
   {
     height: 1cm;
@@ -178,6 +190,11 @@ input {
     {
       height: 100%;
     }
+    
+    .left
+    {
+      text-align:center;
+    }
   }
 
   textarea
@@ -192,6 +209,27 @@ input {
 
   .foot
   {
+
+    label
+    {
+      font-size:12pt;
+    }
+
+    .upper
+    {
+      input
+      {
+        padding-left:1%;
+        margin-top:.5em;
+        width:99%;
+        font-size:14pt;
+      }
+    }
+
+    .lower
+    {
+      padding-top:.5em;
+    }
 
     .left
     {
@@ -209,6 +247,11 @@ input {
     {
       margin-top: 0em;
       margin-bottom:0em;
+    }
+
+    .center
+    {
+      text-align:center;
     }
   }
 }

@@ -479,7 +479,8 @@ input[type=number]::-webkit-inner-spin-button {
   width: 2cm; }
 
 .p3ol .input-underline {
-  width: 90%; }
+  width: 90%;
+  font-size: 14pt; }
 
 .final-statement {
   padding-left: 4cm;
@@ -579,7 +580,7 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 7pt; }
 
 .foot2 {
-  margin-top: 6.5cm; }
+  margin-top: 3cm; }
   .foot2 .sig-upper {
     height: 1.5cm; }
   .foot2 .sig-left {

@@ -92,7 +92,8 @@ input[type=number]::-webkit-inner-spin-button {
   width: 2cm; }
 
 .p3ol .input-underline {
-  width: 90%; }
+  width: 90%;
+  font-size: 14pt; }
 
 .final-statement {
   padding-left: 4cm;

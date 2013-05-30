@@ -167,7 +167,7 @@ input {
 
   .section
   {
-    width: 33%;
+    width: 33.15%;
   }
 
   .header
@@ -192,13 +192,23 @@ input {
 
   .foot
   {
+
     .left
     {
       width: 50%;
+      height: 100%;
     }
+    
     .right
     {
+      height: 100%;
       width:49.65%;
+    }
+    
+    p
+    {
+      margin-top: 0em;
+      margin-bottom:0em;
     }
   }
 }

@@ -366,7 +366,7 @@ input {
   .p3 .mid {
     height: 1cm; }
   .p3 .section {
-    width: 33%; }
+    width: 33.15%; }
   .p3 .header {
     height: 2.5cm; }
     .p3 .header div {
@@ -376,9 +376,14 @@ input {
   .p3 .survay-container {
     margin-left: 0em; }
   .p3 .foot .left {
-    width: 50%; }
+    width: 50%;
+    height: 100%; }
   .p3 .foot .right {
+    height: 100%;
     width: 49.65%; }
+  .p3 .foot p {
+    margin-top: 0em;
+    margin-bottom: 0em; }
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {

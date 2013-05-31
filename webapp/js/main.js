@@ -12,6 +12,11 @@ $(document).ready(function() {
     ghost.val($(this).val());
     return ghost.css($(this).attr('font-size'));
   });
+  $(":checkbox").click(function() {
+    var ghost;
+    ghost = $(":checkbox[name=" + $(this).attr('name') + "-g]");
+    return ghost.prop("checked", $(this).prop("checked"));
+  });
   return $(".taform").keydown(function() {
     if (this.scrollHeight > this.outerHeight) {
       fontsize--;

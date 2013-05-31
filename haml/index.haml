@@ -162,7 +162,7 @@
               %label{:for => "16", :name =>"16-1"}
                 PRINTED NAME OF APPLICANT
               %br
-              %input.input-underline{:type => "text", :name => "16"}
+              %input.input-underline{:type => "text", :name => "name-g"}
             .sig-upper-right.pull-right
               %label{:for => "17", :name => "17-1"}
                 SIGNED UNDER THE PENALTIES OF PERJURY
@@ -224,27 +224,27 @@
               to believe that the property described below:
               %blockquote.tight-paragraphs
                 %p
-                  %input{:type => "checkbox", :name => "1-g", :readonly => "readonly"}
+                  %input{:type => "checkbox", :name => "1-g", :disabled => "disabled"}
                   %label{:for => "1", :name => "1"}
                     has been stolen, embezzled, or obtained by false pretenses.
                 %p
-                  %input{:type => "checkbox", :name => "2-g", :readonly => "readonly"}
+                  %input{:type => "checkbox", :name => "2-g", :disabled => "disabled"}
                   %label{:for => "1", :name => "2"}
                     is intended for use or has been used as the means of committing a crime.
                 %p
-                  %input{:type => "checkbox", :name => "3-g", :readonly => "readonly"}
+                  %input{:type => "checkbox", :name => "3-g", :disabled => "disabled"}
                   %label{:for => "1", :name => "3"}
                     has been concealed to prevent a crime from being discovered.
                 %p
-                  %input{:type => "checkbox", :name => "4-g", :readonly => "readonly"}
+                  %input{:type => "checkbox", :name => "4-g", :disabled => "disabled"}
                   %label{:for => "1", :name => "4"}
                     is unlawfully possessed or concealed for an unlawful purpose.
                 %p
-                  %input{:type => "checkbox", :name => "5-g", :readonly => "readonly"}
+                  %input{:type => "checkbox", :name => "5-g", :disabled => "disabled"}
                   %label{:for => "1", :name => "5"}
                     is evidence of a crime or is evidence of criminal activity.
                 %p
-                  %input{:type => "checkbox", :name => "6-g", :readonly => "readonly"}
+                  %input{:type => "checkbox", :name => "6-g", :disabled => "disabled"}
                   %label{:for => "1", :name => "6"}
                     other
                     %i
@@ -260,7 +260,7 @@
                 %textarea.taform.lines{:rows => "5", :name => "7-g", :readonly => "readonly"}
                 %ul
                   %li
-                    %input{:type => "checkbox", :name => "8-g", :readonly => "readonly"}
+                    %input{:type => "checkbox", :name => "8-g", :disabled => "disabled"}
                     at:
                     %br
                     %textarea.taform.lines{:rows => "2", :name => "9-g", :readonly => "readonly"}
@@ -268,7 +268,7 @@
                     which is occupied by and/or in possession of:
                     %textarea.taform.lines{:rows => "2", :name => "10-g", :readonly => "readonly"}
                   %li
-                    %input{:type =>"checkbox", :name => "11-g", :readonly => "readonly"}
+                    %input{:type =>"checkbox", :name => "11-g", :disabled => "disabled"}
                     on the person or in the possession of
                     %i
                       (identify any specific person(s) to be searched):
@@ -353,7 +353,7 @@
             %p.phfix
               %label
                 Search Warrant Docket Number
-              %input{:type => "text"}
+              %input{:type => "text", :name => "position-g"}
           .right.pull-right.thin-left.section
             %p.phfix
               %label

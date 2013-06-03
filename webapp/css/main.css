@@ -236,6 +236,9 @@ textarea {
 ul {
   list-style-type: none; }
 
+input {
+  font-size: 11pt; }
+
 .border {
   color: #a34719;
   width: 8.5in;
@@ -600,7 +603,7 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 7pt; }
 
 .foot2 {
-  margin-top: 3cm; }
+  margin-top: 2.77cm; }
   .foot2 .sig-upper {
     height: 1.5cm; }
   .foot2 .sig-left {

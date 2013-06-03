@@ -1,4 +1,7 @@
-lowerlim = 8
+lowerlim = 8.5
+
+pxtopt = (pixel) ->
+  return pixel/((.35146/25.4)*96)
 
 $(document).ready ->
   $(":input").focusout ->
@@ -9,6 +12,7 @@ $(document).ready ->
     ghost = $(":checkbox[name="+$(this).attr('name')+"-g]")
     ghost.prop("checked", $(this).prop("checked"))
   $(":input").keydown ->
-    fontsize = parseFloat($(this).css("font-size"))
-    fontsize--
-    $(this).css('font-size', fontsize+'pt')
+    fontsize = parseInt($(this).css("font-size"), 10)
+    fontsize = pxtopt(fontsize)
+    if(fontsize > lowerlim)
+      $(this).css('font-size', (fontsize-1) + "pt")

@@ -12,7 +12,8 @@ $(document).ready ->
     ghost = $(":checkbox[name="+$(this).attr('name')+"-g]")
     ghost.prop("checked", $(this).prop("checked"))
   $(":input").keydown ->
-    fontsize = parseInt($(this).css("font-size"), 10)
-    fontsize = pxtopt(fontsize)
-    if(fontsize > lowerlim)
-      $(this).css('font-size', (fontsize-1) + "pt")
+    if(this.scrollHeight > $(this).outerHeight())
+      fontsize = parseInt($(this).css("font-size"), 10)
+      fontsize = pxtopt(fontsize)
+      if(fontsize > lowerlim)
+        $(this).css('font-size', (fontsize-1) + "pt")

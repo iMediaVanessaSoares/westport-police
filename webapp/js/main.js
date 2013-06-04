@@ -21,10 +21,12 @@ $(document).ready(function() {
   });
   return $(":input").keydown(function() {
     var fontsize;
-    fontsize = parseInt($(this).css("font-size"), 10);
-    fontsize = pxtopt(fontsize);
-    if (fontsize > lowerlim) {
-      return $(this).css('font-size', (fontsize - 1) + "pt");
+    if (this.scrollHeight > $(this).outerHeight()) {
+      fontsize = parseInt($(this).css("font-size"), 10);
+      fontsize = pxtopt(fontsize);
+      if (fontsize > lowerlim) {
+        return $(this).css('font-size', (fontsize - 1) + "pt");
+      }
     }
   });
 });

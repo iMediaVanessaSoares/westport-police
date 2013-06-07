@@ -338,7 +338,7 @@
                 %label
                   PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
                 %input.sifix{:type => "text"}
-    .p3.border.center
+    .p3.border.center.aff{:id => "aff-1"}
       %form{:action => "", :method => "post"}
         .header.thick-bottom
           .left.pull-left.thin-right.section
@@ -359,7 +359,7 @@
                 Trial Court of Massachusetts
               %input{:type => "text"}
         .survay-container
-          %textarea.taform{:rows => "40"}
+          %textarea.taform{:id => "aff-f-1", :rows => "40"}
           .foot
             .upper.thick-top.thin-bottom
               .left.pull-left.thin-right
@@ -383,9 +383,9 @@
                 %input{:type => "text"}
               %p.center
                 Page
-                %input{:type => "text"}
+                %input.pnum{:type => "text", :readonly => "readonly", :value => '1', :id => 'pn-1'}
                 of
-                %input{:type => "text"}
+                %input.pnum{:type => "text", :readonly => "readonly", :value => "1", :name => "mpage"}
                 Pages of this Affidavit
     .p2.border.center
       %form{:action => "", :method => "post"}

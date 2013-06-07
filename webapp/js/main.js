@@ -4,7 +4,7 @@ var lowerlim, pxtopt;
 lowerlim = 8.5;
 
 pxtopt = function(pixel) {
-  return pixel / ((.35146 / 25.4) * 96);
+  return Math.round(pixel / ((.35146 / 25.4) * 96));
 };
 
 $(document).ready(function() {
@@ -21,7 +21,7 @@ $(document).ready(function() {
   });
   return $(":input").keydown(function() {
     var fontsize;
-    if (this.scrollHeight > $(this).outerHeight()) {
+    if (this.scrollHeight > $(this).outerHeight() || $(this).innerWidth() > $(this).outerWidth()) {
       fontsize = parseInt($(this).css("font-size"), 10);
       fontsize = pxtopt(fontsize);
       if (fontsize > lowerlim) {

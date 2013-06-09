@@ -22,7 +22,7 @@ extendaff = function(extra, priorpage) {
   newpage = priorpage.clone();
   affpgcount++;
   newpage.attr("name", "aff-" + affpgcount);
-  newpage.children().children().children("[name='pn']").val(affpgcount);
+  newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount);
   string = "aff-f-" + (affpgcount - 1);
   npchild = newpage.children().children().children("[name='" + string + "']");
   npchild.attr('name', "aff-f-" + affpgcount);

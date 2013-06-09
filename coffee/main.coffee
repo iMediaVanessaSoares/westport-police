@@ -14,8 +14,8 @@ extendaff = (extra, priorpage) ->
   newpage = priorpage.clone()
   affpgcount++
   newpage.attr("name", "aff-"+affpgcount)
-  #look at this ugly code, there must be a more elegant way I just haven't realized yet
-  newpage.children().children().children("[name='pn']").val(affpgcount)
+  #Will write recursive search loop later
+  newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount)
   string = "aff-f-"+(affpgcount-1)
   npchild = newpage.children().children().children("[name='"+string+"']")
   npchild.attr('name', ("aff-f-"+affpgcount))

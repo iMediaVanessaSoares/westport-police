@@ -14,9 +14,10 @@ extendaff = (extra, priorpage) ->
   newpage = priorpage.clone()
   affpgcount++
   newpage.attr("name", "aff-"+affpgcount)
-  newpage.children("[name='pn']").val(affpgcount)
+  #look at this ugly code, there must be a more elegant way I just haven't realized yet
+  newpage.children().children().children("[name='pn']").val(affpgcount)
   string = "aff-f-"+(affpgcount-1)
-  npchild = newpage.children("[name='"+string+"']")
+  npchild = newpage.children().children().children("[name='"+string+"']")
   npchild.attr('name', ("aff-f-"+affpgcount))
   leftovers = extra.substring(maxchar)
   npchild.val extra.substring(0,maxchar)
@@ -45,6 +46,10 @@ $(document).ready ->
         $(this).css('font-size', (fontsize-1) + "pt")
       return
   $("[name='aff-f-1']").focusout ->
+    fs = pxtopt($(this).css('font-size'))
+    while(this.scrollHeight > $(this).outerHeight && fs > lowerlim)
+      $(this).css('fontsize', fs+'pt')
+      fs--
     if($(this).val().length > maxchar)
       ss = $(this).val().substring(maxchar)
       $(this).val $(this).val().substring(0,maxchar)

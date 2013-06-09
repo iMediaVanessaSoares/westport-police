@@ -3,7 +3,7 @@ var affpgcount, extendaff, lowerlim, maxchar, maxpgrenum, pxtopt;
 
 lowerlim = 9;
 
-maxchar = 5360;
+maxchar = 4600;
 
 affpgcount = 1;
 
@@ -18,11 +18,21 @@ maxpgrenum = function() {
 };
 
 extendaff = function(extra, priorpage) {
-  var leftovers, newpage, npchild, string;
+  var leftovers, newpage, npchild, string, temp;
   newpage = priorpage.clone();
   affpgcount++;
   newpage.attr("name", "aff-" + affpgcount);
   newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount);
+  temp = newpage.children().children().children().children().children().children().children("[name='paffi']");
+  temp.attr('name', temp.attr('name') + "-g");
+  temp = newpage.children().children().children().children().children().children().children("[name='affsig']");
+  temp.attr('name', temp.attr('name') + "-g");
+  temp = newpage.children().children().children().children().children().children("[name='date']");
+  temp.attr('name', temp.attr('name') + "-g");
+  temp = newpage.children().children().children().children().children().children("[name='affsig2']");
+  temp.attr('name', temp.attr('name') + "-g");
+  temp = newpage.children().children().children().children().children("[name='tcourt']");
+  temp.attr('name', temp.attr('name') + "-g");
   string = "aff-f-" + (affpgcount - 1);
   npchild = newpage.children().children().children("[name='" + string + "']");
   npchild.attr('name', "aff-f-" + affpgcount);
@@ -59,9 +69,9 @@ $(document).ready(function() {
   });
   $("[name='aff-f-1']").focusout(function() {
     var fs, ss, startingpage;
-    fs = pxtopt($(this).css('font-size'));
-    while (this.scrollHeight > $(this).outerHeight && fs > lowerlim) {
-      $(this).css('fontsize', fs + 'pt');
+    fs = pxtopt(parseInt($(this).css('font-size')));
+    while (this.scrollHeight > $(this).outerHeight() && fs > lowerlim) {
+      $(this).css('font-size', fs + 'pt');
       fs--;
     }
     if ($(this).val().length > maxchar) {

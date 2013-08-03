@@ -1,10 +1,9 @@
 $brown : #A34719;
 
 .border {
-  color: $brown;
   width: 8.5in;
   height: 11in;
-  border: 2px solid;
+  border: 2px solid $brown;
 }
 .center {
   margin-left: auto;

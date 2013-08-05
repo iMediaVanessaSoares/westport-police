@@ -1,4 +1,5 @@
 lowerlim = 9
+Upperlim = 14
 maxchar = 4600
 affpgcount = 1
 
@@ -55,6 +56,13 @@ $(document).ready ->
       if(fontsize > lowerlim)
         $(this).css('font-size', (fontsize-1) + "pt")
       return
+    if(this.scrollHeight < $(this).outerHeight() || this.scrollWidth < $(this).outerWidth())
+      fontsize = parseInt($(this).css("font-size"), 10)
+      fontsize = pxtopt(fontsize)
+      if(fontsize < Upperlim)
+        $(this).css('font-size', (fontsize+1) + "pt")
+      return
+
   $("[name='aff-f-1']").focusout ->
     fs = pxtopt(parseInt($(this).css('font-size')))
     while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)

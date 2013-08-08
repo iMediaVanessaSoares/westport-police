@@ -56,7 +56,7 @@ $(document).ready ->
       if(fontsize > lowerlim)
         $(this).css('font-size', (fontsize-1) + "pt")
       return
-    if(this.scrollHeight < $(this).outerHeight() || this.scrollWidth < $(this).outerWidth())
+    else if(this.scrollHeight < $(this).outerHeight() || this.scrollWidth < $(this).outerWidth())
       fontsize = parseInt($(this).css("font-size"), 10)
       fontsize = pxtopt(fontsize)
       if(fontsize < Upperlim)

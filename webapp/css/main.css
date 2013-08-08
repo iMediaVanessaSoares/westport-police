@@ -503,6 +503,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .p3ol .input-underline {
   width: 90%;
+  line-height: 18pt;
   font-size: 14pt; }
 
 .final-statement {
@@ -626,7 +627,7 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 7pt; }
 
 .foot2 {
-  margin-top: 2.77cm; }
+  margin-top: 2.1cm; }
   .foot2 .sig-upper {
     height: 1.5cm; }
   .foot2 .sig-left {

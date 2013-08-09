@@ -49,6 +49,21 @@ $(document).ready ->
     ghost = $(":checkbox[name="+$(this).attr('name')+"-g]")
     ghost.prop("checked", $(this).prop("checked"))
     return
+  $(":checkbox[name^=cr]").click ->
+    nametemp = $(this).attr('name')
+    if(nametemp.indexOf("-c") >= 0)
+      $(this).prop("checked",true)
+      nametemp = $(this).attr('name')
+      nametemp = nametemp.substring(0,3)
+      $("[name="+nametemp+"]").prop('checked', false)
+      return
+    else
+      #no this is disgusting, clean this mess up
+      temp = $(this).attr('name')
+      c2 = $("[name="+temp+"-c]")
+      c2.prop("checked", false)
+      $(this).prop("checked", true)
+      return
   $(":input").keydown ->
     if(this.scrollHeight > $(this).outerHeight() || this.scrollWidth > $(this).outerWidth())
       fontsize = parseInt($(this).css("font-size"), 10)

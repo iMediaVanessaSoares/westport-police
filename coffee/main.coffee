@@ -1,5 +1,5 @@
 lowerlim = 9
-Upperlim = 14
+Upperlim = 12
 maxchar = 4600
 affpgcount = 1
 
@@ -18,15 +18,15 @@ extendaff = (extra, priorpage) ->
   #Will write recursive search loop later
   newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount)
   temp = newpage.children().children().children().children().children().children().children("[name='paffi']")
-  temp.attr('name', temp.attr('name')+"-g")
+  temp.attr('name', temp.attr('name'))
   temp = newpage.children().children().children().children().children().children().children("[name='affsig']")
-  temp.attr('name', temp.attr('name')+"-g")
+  temp.attr('name', temp.attr('name'))
   temp = newpage.children().children().children().children().children().children("[name='date']")
-  temp.attr('name', temp.attr('name')+"-g")
+  temp.attr('name', temp.attr('name'))
   temp = newpage.children().children().children().children().children().children("[name='affsig2']")
-  temp.attr('name', temp.attr('name')+"-g")
+  temp.attr('name', temp.attr('name'))
   temp = newpage.children().children().children().children().children("[name='tcourt']")
-  temp.attr('name', temp.attr('name')+"-g")
+  temp.attr('name', temp.attr('name'))
   string = "aff-f-"+(affpgcount-1)
   npchild = newpage.children().children().children("[name='"+string+"']")
   npchild.attr('name', ("aff-f-"+affpgcount))
@@ -41,7 +41,7 @@ extendaff = (extra, priorpage) ->
 
 $(document).ready ->
   $(":input").focusout ->
-    ghost = $(":input[name="+$(this).attr('name')+ "-g]")
+    ghost = $(":input[name="+$(this).attr('name')+"]")
     ghost.val $(this).val()
     ghost.css('font-size', $(this).css('font-size'))
     return
@@ -62,7 +62,6 @@ $(document).ready ->
       if(fontsize < Upperlim)
         $(this).css('font-size', (fontsize+1) + "pt")
       return
-
   $("[name='aff-f-1']").focusout ->
     fs = pxtopt(parseInt($(this).css('font-size')))
     while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
@@ -77,6 +76,3 @@ $(document).ready ->
        extendaff(ss, startingpage)
       return
   return
-
-
-

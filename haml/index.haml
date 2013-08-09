@@ -162,7 +162,7 @@
               %label{:for => "16", :name =>"16-1"}
                 PRINTED NAME OF APPLICANT
               %br
-              %input.input-underline{:type => "text", :name => "name-g"}
+              %input.input-underline{:type => "text", :name => "name"}
             .sig-upper-right.pull-right
               %label{:for => "17", :name => "17-1"}
                 SIGNED UNDER THE PENALTIES OF PERJURY
@@ -202,15 +202,15 @@
             .court.thin-bottom.header-right-upper
               %h2 TRIAL COURT OF MASSACHUSETTS
               .header-input-box
-                %input.box-underline{:type => "text", :name => "court_department-g", :readonly => "readonly"}
+                %input.box-underline{:type => "text", :name => "court_department", :readonly => "readonly"}
                 %label{:for => "court_department"} COURT DEPARTMENT
               .header-input-box
-                %input.box-underline{:type => "text", :name => "division-g", :readonly => "readonly"}
+                %input.box-underline{:type => "text", :name => "division", :readonly => "readonly"}
                 %label{:for => "division"} DIVISION
 
             .docket.header-input-box.thin-top
               %label{:for => "position"} SEARCH WARRANT DOCKET NUMBER
-              %input{:type => "text", :name => "position-g", :readonly => "readonly"}
+              %input{:type => "text", :name => "position", :readonly => "readonly"}
         .survay-container
           .questions
             %p.font-override
@@ -224,32 +224,32 @@
               to believe that the property described below:
               %blockquote.tight-paragraphs
                 %p
-                  %input{:type => "checkbox", :name => "1-g", :disabled => "disabled"}
+                  %input{:type => "checkbox", :name => "1", :disabled => "disabled"}
                   %label{:for => "1", :name => "1"}
                     has been stolen, embezzled, or obtained by false pretenses.
                 %p
-                  %input{:type => "checkbox", :name => "2-g", :disabled => "disabled"}
+                  %input{:type => "checkbox", :name => "2", :disabled => "disabled"}
                   %label{:for => "1", :name => "2"}
                     is intended for use or has been used as the means of committing a crime.
                 %p
-                  %input{:type => "checkbox", :name => "3-g", :disabled => "disabled"}
+                  %input{:type => "checkbox", :name => "3", :disabled => "disabled"}
                   %label{:for => "1", :name => "3"}
                     has been concealed to prevent a crime from being discovered.
                 %p
-                  %input{:type => "checkbox", :name => "4-g", :disabled => "disabled"}
+                  %input{:type => "checkbox", :name => "4", :disabled => "disabled"}
                   %label{:for => "1", :name => "4"}
                     is unlawfully possessed or concealed for an unlawful purpose.
                 %p
-                  %input{:type => "checkbox", :name => "5-g", :disabled => "disabled"}
+                  %input{:type => "checkbox", :name => "5", :disabled => "disabled"}
                   %label{:for => "1", :name => "5"}
                     is evidence of a crime or is evidence of criminal activity.
                 %p
-                  %input{:type => "checkbox", :name => "6-g", :disabled => "disabled"}
+                  %input{:type => "checkbox", :name => "6", :disabled => "disabled"}
                   %label{:for => "1", :name => "6"}
                     other
                     %i
                       (specify)
-                  %input.input-underline{:type => "text", :name => "6-1-g", :readonly => "readonly"}
+                  %input.input-underline{:type => "text", :name => "6-1", :readonly => "readonly"}
                   %label{:for => "1", :name => "6-1"}
             %p
               %b
@@ -257,42 +257,42 @@
               within a reasonable time and in no event later than seven days from the issuance of this search warrant
               to search for the following property:
               %p
-                %textarea.taform.lines{:rows => "5", :name => "7-g", :readonly => "readonly"}
+                %textarea.taform.lines{:rows => "5", :name => "7", :readonly => "readonly"}
                 %ul
                   %li
-                    %input{:type => "checkbox", :name => "8-g", :disabled => "disabled"}
+                    %input{:type => "checkbox", :name => "8", :disabled => "disabled"}
                     at:
                     %br
-                    %textarea.taform.lines{:rows => "2", :name => "9-g", :readonly => "readonly"}
+                    %textarea.taform.lines{:rows => "2", :name => "9", :readonly => "readonly"}
                   %li
                     which is occupied by and/or in possession of:
-                    %textarea.taform.lines{:rows => "2", :name => "10-g", :readonly => "readonly"}
+                    %textarea.taform.lines{:rows => "2", :name => "10", :readonly => "readonly"}
                   %li
-                    %input{:type =>"checkbox", :name => "11-g", :disabled => "disabled"}
+                    %input{:type =>"checkbox", :name => "11", :disabled => "disabled"}
                     on the person or in the possession of
                     %i
                       (identify any specific person(s) to be searched):
-                    %input.input-underline{:type => "text", :name => "12-g", :readonly => "readonly"}
+                    %input.input-underline{:type => "text", :name => "12", :readonly => "readonly"}
                   %li
                     %p
                       You 
-                      %input{:type => "checkbox"}
+                      %input{:type => "checkbox", :name=> "cr1"}
                       are
-                      %input{:type => "checkbox"}
+                      %input{:type => "checkbox", :name => "cr1-c"}
                       are not   also authorized to conduct the search at any time during the night.
                   %li
                     %p
                       You 
-                      %input{:type => "checkbox"}
+                      %input{:type => "checkbox", :name=> "cr2"}
                       are
-                      %input{:type => "checkbox"}
+                      %input{:type => "checkbox", :name => "cr2-c"}
                       are not   also authorized to enter the premises without announcement.
                   %li
                     %p
                       You 
-                      %input{:type => "checkbox"}
+                      %input{:type => "checkbox", :name => "cr3-c"}
                       are
-                      %input{:type => "checkbox"}
+                      %input{:type => "checkbox", :name => "cr3-c"}
                       are not   also commanded to search any person present who may be found to have such
                       property in his or her possession or under his or her control or to whom such property
                       may have been delivered.
@@ -315,7 +315,7 @@
                 %label
                   DATE ISSUED
                 %p.pfix
-                  %input.sifix{:type => "text"}
+                  %input.sifix{:type => "text", :name => "DateIssued"}
             .sig-upper-right.pull-right.thin-left
               %p.pfix
                 %label
@@ -323,7 +323,7 @@
                 %p.pfix
                   %b
                     X
-                  %input.input-underline{:type => "text"}
+                  %input.input-underline{:type => "text", :name => "SigJust"}
           .sig-lower.thin-top
             .sig-bottom-left.pull-left.thin-right
               %p.pfix
@@ -332,12 +332,13 @@
                 %br
                 %b
                   WITNESS:
-                %input.input-underline{:type => "text"}
+                %input.input-underline{:type => "text", :name => "FirJust"}
             .sig-bottom-right.pull-right.thin-left
               %p.pfix
                 %label
                   PRINTED NAMED OF JUSTICE, CLERK-MAGISTRATE OR ASSISTANT CLERK
-                %input.sifix{:type => "text"}
+                %input.sifix{:type => "text", :name => "JustName"}
+
     .p3.border.center.aff{:name => "aff-1"}
       %form{:action => "", :method => "post"}
         .header.thick-bottom
@@ -352,7 +353,7 @@
             %p.phfix
               %label
                 Search Warrant Docket Number
-              %input{:type => "text", :name => "position-g"}
+              %input{:type => "text", :name => "position"}
           .right.pull-right.thin-left.section
             %p.phfix
               %label
@@ -387,6 +388,7 @@
                 of
                 %input.pnum{:type => "text", :readonly => "readonly", :value => "1", :name => "mpage"}
                 Pages of this Affidavit
+
     .p2.border.center
       %form{:action => "", :method => "post"}
         .survay-container

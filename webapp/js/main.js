@@ -3,7 +3,7 @@ var Upperlim, affpgcount, extendaff, lowerlim, maxchar, maxpgrenum, pxtopt;
 
 lowerlim = 9;
 
-Upperlim = 14;
+Upperlim = 12;
 
 maxchar = 4600;
 
@@ -26,15 +26,15 @@ extendaff = function(extra, priorpage) {
   newpage.attr("name", "aff-" + affpgcount);
   newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount);
   temp = newpage.children().children().children().children().children().children().children("[name='paffi']");
-  temp.attr('name', temp.attr('name') + "-g");
+  temp.attr('name', temp.attr('name'));
   temp = newpage.children().children().children().children().children().children().children("[name='affsig']");
-  temp.attr('name', temp.attr('name') + "-g");
+  temp.attr('name', temp.attr('name'));
   temp = newpage.children().children().children().children().children().children("[name='date']");
-  temp.attr('name', temp.attr('name') + "-g");
+  temp.attr('name', temp.attr('name'));
   temp = newpage.children().children().children().children().children().children("[name='affsig2']");
-  temp.attr('name', temp.attr('name') + "-g");
+  temp.attr('name', temp.attr('name'));
   temp = newpage.children().children().children().children().children("[name='tcourt']");
-  temp.attr('name', temp.attr('name') + "-g");
+  temp.attr('name', temp.attr('name'));
   string = "aff-f-" + (affpgcount - 1);
   npchild = newpage.children().children().children("[name='" + string + "']");
   npchild.attr('name', "aff-f-" + affpgcount);
@@ -50,7 +50,7 @@ extendaff = function(extra, priorpage) {
 $(document).ready(function() {
   $(":input").focusout(function() {
     var ghost;
-    ghost = $(":input[name=" + $(this).attr('name') + "-g]");
+    ghost = $(":input[name=" + $(this).attr('name') + "]");
     ghost.val($(this).val());
     ghost.css('font-size', $(this).css('font-size'));
   });

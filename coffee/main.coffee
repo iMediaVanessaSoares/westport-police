@@ -12,7 +12,7 @@ maxpgrenum = () ->
   return
 
 extendaff = (extra, priorpage) ->
-  newpage = priorpage.clone()
+  newpage = priorpage.clone(true)
   affpgcount++
   newpage.attr("name", "aff-"+affpgcount)
   #Will write recursive search loop later

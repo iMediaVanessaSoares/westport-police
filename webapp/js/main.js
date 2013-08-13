@@ -21,7 +21,7 @@ maxpgrenum = function() {
 
 extendaff = function(extra, priorpage) {
   var leftovers, newpage, npchild, string, temp;
-  newpage = priorpage.clone();
+  newpage = priorpage.clone(true);
   affpgcount++;
   newpage.attr("name", "aff-" + affpgcount);
   newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount);

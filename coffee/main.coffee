@@ -3,7 +3,6 @@ Upperlim = 12
 maxchar = 4600
 affpgcount = 1
 currpg = 1
-afftxt = ""
 
 pxtopt = (pixel) ->
   return Math.round(pixel/((.35146/25.4)*96))
@@ -23,15 +22,19 @@ pnnum =() ->
   currpg = currpg + 1
   return
 
-newaffpage = (priorpage) ->
+newaffpage = (priorpage,ext) ->
   newpage = priorpage.clone(true)
   affpgcount++
   npchild = newpage.children().children().children("[name='aff-f-1']")
   priorpage.after newpage
   npchild.val("")
-  npchild.focus()
-  maxpgrenum
-  pnrenum
+  if(ext.length>maxchar)
+    npchild.val(ext.substring(0,maxchar))
+    newaffpage(newpage,ext.substring(maxchar))
+  else
+    npchild.focus()
+    maxpgrenum
+    pnrenum
   return
 
 
@@ -51,16 +54,15 @@ keydownhandler = (event) ->
       pnrenum()
   else
     if($(':focus').val().length > maxchar)
-      newaffpage($(':focus').parent().parent().parent())
-  return
-
-grabafftxt = () ->
-  $("[name='aff-f-1']").each(riptxt)
-  return
-
-riptxt = () ->
-  afftxt.concat($(this).val)
-  console.log(afftxt)
+      node = $(':focus').parent().parent().parent()
+      if(affpgcount == 1)
+        txt = $(":focus").val()
+        if(txt.length > maxchar)
+          extratxt=txt.substring(maxchar)
+          $(":focus").val(txt.substring(0,maxchar))
+        else
+          extratxt=""
+        newaffpage(node,extratxt)
   return
 
 extendaff = (extra, priorpage) ->

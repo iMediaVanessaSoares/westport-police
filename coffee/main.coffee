@@ -15,7 +15,6 @@ maxpgrenum = () ->
 
 pnrenum = () ->
   currpg = 1
-  console.log("got here")
   $("[name='pn']").each(pnnum)
   return
 
@@ -23,6 +22,18 @@ pnnum =() ->
   $(this).val(currpg)
   currpg = currpg + 1
   return
+
+newaffpage = (priorpage) ->
+  newpage = priorpage.clone(true)
+  affpgcount++
+  npchild = newpage.children().children().children("[name='aff-f-1']")
+  priorpage.after newpage
+  npchild.val("")
+  npchild.focus()
+  maxpgrenum
+  pnrenum
+  return
+
 
 keydownhandler = (event) ->
   if(event.which==8)
@@ -38,6 +49,9 @@ keydownhandler = (event) ->
       affpgcount = affpgcount - 1
       maxpgrenum()
       pnrenum()
+  else
+    if($(':focus').val().length > maxchar)
+      newaffpage($(':focus').parent().parent().parent())
   return
 
 grabafftxt = () ->
@@ -116,18 +130,18 @@ $(document).ready ->
         $(this).css('font-size', (fontsize+1) + "pt")
       return
   $("[name='aff-f-1']").focusout ->
-    fs = pxtopt(parseInt($(this).css('font-size')))
-    while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
-      $(this).css('font-size', fs+'pt')
-      fs--
-    if($(this).val().length > maxchar)
-      ss = $(this).val().substring(maxchar)
-      $(this).val $(this).val().substring(0,maxchar)
-      startingpage = $("[name='aff-1']")
+    #  fs = pxtopt(parseInt($(this).css('font-size')))
+    #  while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
+      #  $(this).css('font-size', fs+'pt')
+      #  fs--
+    # if($(this).val().length > maxchar)
+    #  ss = $(this).val().substring(maxchar)
+    #  $(this).val $(this).val().substring(0,maxchar)
+    #  startingpage = $("[name='aff-1']")
       #recursive call to handle the rest
-      if(ss.length > 0)
-       extendaff(ss, startingpage)
-      return
+      #  if(ss.length > 0)
+      #   extendaff(ss, startingpage)
+      #  return
   $("[name='aff-f-1']").keydown ->
     keydownhandler(event)
     return

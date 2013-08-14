@@ -30,20 +30,24 @@ keydownhandler = (event) ->
       rmpg = $(':focus').parent().parent().parent()
       psib = rmpg.prev()
       psib.children().children().children("[name='aff-f-1']").focus()
+      nodeta = psib.children().children().children("[name='aff-f-1']")
+      temp = nodeta.val()
+      nodeta.val("")
+      nodeta.val(temp)
       rmpg.remove()
       affpgcount = affpgcount - 1
       maxpgrenum()
       pnrenum()
   return
 
-#grabafftxt = () ->
-  # $("[name='aff-f-1']").each(riptxt())
-  # return
+grabafftxt = () ->
+  $("[name='aff-f-1']").each(riptxt)
+  return
 
-#riptxt = () ->
-  #afftxt.concat($(this).val
-  # console.log(afftxt)
-  #  return
+riptxt = () ->
+  afftxt.concat($(this).val)
+  console.log(afftxt)
+  return
 
 extendaff = (extra, priorpage) ->
   newpage = priorpage.clone(true)

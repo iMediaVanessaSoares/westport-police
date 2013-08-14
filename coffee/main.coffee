@@ -2,6 +2,7 @@ lowerlim = 9
 Upperlim = 12
 maxchar = 4600
 affpgcount = 1
+currpg = 1
 afftxt = ""
 
 pxtopt = (pixel) ->
@@ -10,6 +11,17 @@ pxtopt = (pixel) ->
 maxpgrenum = () ->
   $("[name='mpage']").each ->
     $(this).val affpgcount
+  return
+
+pnrenum = () ->
+  currpg = 1
+  console.log("got here")
+  $("[name='pn']").each(pnnum)
+  return
+
+pnnum =() ->
+  $(this).val(currpg)
+  currpg = currpg + 1
   return
 
 keydownhandler = (event) ->
@@ -21,6 +33,7 @@ keydownhandler = (event) ->
       rmpg.remove()
       affpgcount = affpgcount - 1
       maxpgrenum()
+      pnrenum()
   return
 
 #grabafftxt = () ->

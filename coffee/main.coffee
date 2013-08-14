@@ -14,9 +14,10 @@ maxpgrenum = () ->
 
 keydownhandler = (event) ->
   if(event.which==8)
-    #event.preventDefault()
     if($(':focus').val().length == 0 && affpgcount != 1)
       rmpg = $(':focus').parent().parent().parent()
+      psib = rmpg.prev()
+      psib.children().children().children("[name='aff-f-1']").focus()
       rmpg.remove()
       affpgcount = affpgcount - 1
   return
@@ -112,4 +113,7 @@ $(document).ready ->
   $("[name='aff-f-1']").keydown ->
     keydownhandler(event)
     return
+  $(document).keydown ->
+    if(event.which == 8 && !$(event.target).is("input, textarea"))
+      e.preventDefault
   return

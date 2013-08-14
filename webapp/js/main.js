@@ -22,10 +22,12 @@ maxpgrenum = function() {
 };
 
 keydownhandler = function(event) {
-  var rmpg;
+  var psib, rmpg;
   if (event.which === 8) {
     if ($(':focus').val().length === 0 && affpgcount !== 1) {
       rmpg = $(':focus').parent().parent().parent();
+      psib = rmpg.prev();
+      psib.children().children().children("[name='aff-f-1']").focus();
       rmpg.remove();
       affpgcount = affpgcount - 1;
     }
@@ -122,5 +124,10 @@ $(document).ready(function() {
   });
   $("[name='aff-f-1']").keydown(function() {
     keydownhandler(event);
+  });
+  $(document).keydown(function() {
+    if (event.which === 8 && !$(event.target).is("input, textarea")) {
+      return e.preventDefault;
+    }
   });
 });

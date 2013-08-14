@@ -2,6 +2,7 @@ lowerlim = 9
 Upperlim = 12
 maxchar = 4600
 affpgcount = 1
+afftxt = ""
 
 pxtopt = (pixel) ->
   return Math.round(pixel/((.35146/25.4)*96))
@@ -12,14 +13,22 @@ maxpgrenum = () ->
   return
 
 keydownhandler = (event) ->
-  if(event.which=8)
-    if($(':focus').length = 0)
-      rmpg = $(':focus').parent().parent().parent().parent()
-      remaffpage(rmpg)
+  if(event.which==8)
+    #event.preventDefault()
+    if($(':focus').val().length == 0 && affpgcount != 1)
+      rmpg = $(':focus').parent().parent().parent()
+      rmpg.remove()
+      affpgcount = affpgcount - 1
   return
 
-remaffpage = (page) ->
-    page.remove()
+#grabafftxt = () ->
+  # $("[name='aff-f-1']").each(riptxt())
+  # return
+
+#riptxt = () ->
+  #afftxt.concat($(this).val
+  # console.log(afftxt)
+  #  return
 
 extendaff = (extra, priorpage) ->
   newpage = priorpage.clone(true)

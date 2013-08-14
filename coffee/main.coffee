@@ -20,6 +20,7 @@ keydownhandler = (event) ->
       psib.children().children().children("[name='aff-f-1']").focus()
       rmpg.remove()
       affpgcount = affpgcount - 1
+      maxpgrenum()
   return
 
 #grabafftxt = () ->

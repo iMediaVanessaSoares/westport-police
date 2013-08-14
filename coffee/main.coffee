@@ -11,10 +11,20 @@ maxpgrenum = () ->
     $(this).val affpgcount
   return
 
+keydownhandler = (event) ->
+  if(event.which=8)
+    if($(':focus').length = 0)
+      rmpg = $(':focus').parent().parent().parent().parent()
+      remaffpage(rmpg)
+  return
+
+remaffpage = (page) ->
+    page.remove()
+
 extendaff = (extra, priorpage) ->
   newpage = priorpage.clone(true)
   affpgcount++
-  newpage.attr("name", "aff-"+affpgcount)
+  newpage.attr("name", "aff-1")
   #Will write recursive search loop later
   newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount)
   temp = newpage.children().children().children().children().children().children().children("[name='paffi']")
@@ -27,9 +37,8 @@ extendaff = (extra, priorpage) ->
   temp.attr('name', temp.attr('name'))
   temp = newpage.children().children().children().children().children("[name='tcourt']")
   temp.attr('name', temp.attr('name'))
-  string = "aff-f-"+(affpgcount-1)
-  npchild = newpage.children().children().children("[name='"+string+"']")
-  npchild.attr('name', ("aff-f-"+affpgcount))
+  npchild = newpage.children().children().children("[name='aff-f-1']")
+  npchild.attr('name', ("aff-f-1"))
   leftovers = extra.substring(maxchar)
   npchild.val extra.substring(0,maxchar)
   #Update max pages on every affidavit page
@@ -41,9 +50,10 @@ extendaff = (extra, priorpage) ->
 
 $(document).ready ->
   $(":input").focusout ->
-    ghost = $(":input[name="+$(this).attr('name')+"]")
-    ghost.val $(this).val()
-    ghost.css('font-size', $(this).css('font-size'))
+    if($(this).attr('name')!="aff-f-1")
+      ghost = $(":input[name="+$(this).attr('name')+"]")
+      ghost.val $(this).val()
+      ghost.css('font-size', $(this).css('font-size'))
     return
   $(":checkbox").click ->
     ghost = $(":checkbox[name="+$(this).attr('name')+"-g]")
@@ -90,4 +100,7 @@ $(document).ready ->
       if(ss.length > 0)
        extendaff(ss, startingpage)
       return
+  $("[name='aff-f-1']").keydown ->
+    keydownhandler(event)
+    return
   return

@@ -3,6 +3,7 @@ Upperlim = 12
 maxchar = 4600
 affpgcount = 1
 currpg = 1
+affalltext = ""
 
 pxtopt = (pixel) ->
   return Math.round(pixel/((.35146/25.4)*96))
@@ -37,32 +38,19 @@ newaffpage = (priorpage,ext) ->
     pnrenum
   return
 
+#grabs text from all affidavit field
+affgrabtext = (page) ->
+  #grab aff form
+  affta = page.children().children().children("[name='aff-f-1']")
+  affalltext.concat(affta.val())
+  return
 
-keydownhandler = (event) ->
-  if(event.which==8)
-    if($(':focus').val().length == 0 && affpgcount != 1)
-      rmpg = $(':focus').parent().parent().parent()
-      psib = rmpg.prev()
-      psib.children().children().children("[name='aff-f-1']").focus()
-      nodeta = psib.children().children().children("[name='aff-f-1']")
-      temp = nodeta.val()
-      nodeta.val("")
-      nodeta.val(temp)
-      rmpg.remove()
-      affpgcount = affpgcount - 1
-      maxpgrenum()
-      pnrenum()
-  else
-    if($(':focus').val().length > maxchar)
-      node = $(':focus').parent().parent().parent()
-      if(affpgcount == 1)
-        txt = $(":focus").val()
-        if(txt.length > maxchar)
-          extratxt=txt.substring(maxchar)
-          $(":focus").val(txt.substring(0,maxchar))
-        else
-          extratxt=""
-        newaffpage(node,extratxt)
+#Enter affidavit edit mode
+addeditmode = () ->
+  #reset affalltext
+  affalltext = ""
+  $("[name='aff-1']").each ->
+    $(this).affgrabtext($(this))
   return
 
 extendaff = (extra, priorpage) ->
@@ -132,18 +120,18 @@ $(document).ready ->
         $(this).css('font-size', (fontsize+1) + "pt")
       return
   $("[name='aff-f-1']").focusout ->
-    #  fs = pxtopt(parseInt($(this).css('font-size')))
-    #  while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
-      #  $(this).css('font-size', fs+'pt')
-      #  fs--
-    # if($(this).val().length > maxchar)
-    #  ss = $(this).val().substring(maxchar)
-    #  $(this).val $(this).val().substring(0,maxchar)
-    #  startingpage = $("[name='aff-1']")
+    fs = pxtopt(parseInt($(this).css('font-size')))
+    while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
+      $(this).css('font-size', fs+'pt')
+      fs--
+    if($(this).val().length > maxchar)
+      ss = $(this).val().substring(maxchar)
+      $(this).val $(this).val().substring(0,maxchar)
+      startingpage = $("[name='aff-1']")
       #recursive call to handle the rest
-      #  if(ss.length > 0)
-      #   extendaff(ss, startingpage)
-      #  return
+      if(ss.length > 0)
+        extendaff(ss, startingpage)
+    return
   $("[name='aff-f-1']").keydown ->
     keydownhandler(event)
     return

@@ -56,7 +56,7 @@ affgrabtext = function(page) {
   var affta;
   console.log("grabtext");
   affta = page.find("[name='aff-f-1']");
-  affalltext.concat(affta.val());
+  affalltext += affta.val();
   if (page.find("[name='pn']").val() > 1) {
     page.remove();
   }
@@ -64,7 +64,6 @@ affgrabtext = function(page) {
 
 affeditmode = function() {
   affalltext = "";
-  console.log("editmode");
   affpgcount = 1;
   $("[name='aff-1']").each(function() {
     return affgrabtext($(this));

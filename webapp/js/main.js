@@ -54,23 +54,36 @@ newaffpage = function(priorpage, ext) {
 
 getnextline = function(text) {
   var exp, result;
-  exp = new RegExp("(.*)(\.|\n){1}");
+  console.log("getline");
+  exp = new RegExp("([^\.\n]*)(\.|\n){1}");
   result = exp.exec(text);
+  console.log(result[0]);
+  if (result[0] === null) {
+    console.log("YOU DUMBASS!");
+    return "";
+  }
   return result[0];
 };
 
 placenextline = function(page, text) {
   var affta, newtext, nline, oldval, restext;
+  console.log("placelinecall");
   nline = getnextline(text);
   affta = page.find("[name='aff-f-1']");
   oldval = affta.val();
   newtext = text.substring(nline.length);
   affta.val(affta.val() + nline);
   if (page.scrollHeight > page.outerHeight()) {
+    console.log("end recurse");
     affta.val(oldval);
     restext = text;
   } else {
-    restext = placenextline(page, newtext);
+    if (newtext.length !== 0) {
+      console.log("recurse");
+      restext = placenextline(page, newtext);
+    } else {
+      return;
+    }
   }
   return restext;
 };
@@ -114,7 +127,7 @@ extendaff = function(extra, priorpage) {
   temp.attr('name', temp.attr('name'));
   npchild = newpage.find("[name='aff-f-1']");
   npchild.attr('name', "aff-f-1");
-  leftovers = extra.substring(maxchar);
+  leftovers = placenextline(newpage, extra);
   npchild.val(extra.substring(0, maxchar));
   priorpage.after(newpage);
   maxpgrenum();

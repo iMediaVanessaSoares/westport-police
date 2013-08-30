@@ -39,6 +39,29 @@ newaffpage = (priorpage,ext) ->
     pnrenum
   return
 
+getnextline = (text) ->
+  #regexp to find chain of letters ending in linefeed or period
+  #return line
+  exp = new RegExp("(.*)(\.|\n){1}")
+  result = exp.exec(text)
+  return result[0]
+
+placenextline = (page, text) ->
+  #recursion, because why not?
+  nline = getnextline(text)
+  affta = page.find("[name='aff-f-1']")
+  #save old val
+  oldval = affta.val()
+  newtext = text.substring(nline.length)
+  affta.val(affta.val()+nline)
+  #now check scroll height
+  if(page.scrollHeight > page.outerHeight())
+    affta.val(oldval)
+    restext = text
+  else
+    restext = placenextline(page, newtext)
+  return restext
+
 #grabs text from all affidavit field
 affgrabtext = (page) ->
   #grab aff form
@@ -79,7 +102,7 @@ extendaff = (extra, priorpage) ->
   temp.attr('name', temp.attr('name'))
   npchild = newpage.find("[name='aff-f-1']")
   npchild.attr('name', ("aff-f-1"))
-  leftovers = extra.substring(maxchar)
+  leftovers = extra.substring(maxchar)#placenextline(newpage, extra)
   npchild.val extra.substring(0,maxchar)
   #Update max pages on every affidavit page
   priorpage.after newpage

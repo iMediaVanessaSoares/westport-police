@@ -54,7 +54,6 @@ newaffpage = function(priorpage, ext) {
 
 affgrabtext = function(page) {
   var affta;
-  console.log("grabtext");
   affta = page.find("[name='aff-f-1']");
   affalltext += affta.val();
   if (page.find("[name='pn']").val() > 1) {
@@ -69,9 +68,9 @@ affeditmode = function() {
     return affgrabtext($(this));
   });
   maxpgrenum();
-  console.log(affalltext);
   $("[name='aff-f-1']").val(affalltext);
   $("[name='aff-f-1']").focus();
+  $(document).scrollTop($("[name='aff-f-1']").position().top);
 };
 
 extendaff = function(extra, priorpage) {

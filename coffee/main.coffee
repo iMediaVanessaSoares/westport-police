@@ -42,7 +42,6 @@ newaffpage = (priorpage,ext) ->
 #grabs text from all affidavit field
 affgrabtext = (page) ->
   #grab aff form
-  console.log("grabtext")
   affta = page.find("[name='aff-f-1']")
   affalltext += affta.val()
   if(page.find("[name='pn']").val() > 1)
@@ -57,9 +56,9 @@ affeditmode = () ->
   $("[name='aff-1']").each ->
     affgrabtext($(this))
   maxpgrenum()
-  console.log(affalltext)
   $("[name='aff-f-1']").val(affalltext)
   $("[name='aff-f-1']").focus()
+  $(document).scrollTop($("[name='aff-f-1']").position().top)
   return
 
 extendaff = (extra, priorpage) ->

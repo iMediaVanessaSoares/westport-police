@@ -4,6 +4,7 @@ maxchar = 4600
 affpgcount = 1
 currpg = 1
 affalltext = ""
+editmode = false
 
 pxtopt = (pixel) ->
   return Math.round(pixel/((.35146/25.4)*96))
@@ -59,6 +60,7 @@ affeditmode = () ->
   maxpgrenum()
   console.log(affalltext)
   $("[name='aff-f-1']").val(affalltext)
+  $("[name='aff-f-1']").focus()
   return
 
 extendaff = (extra, priorpage) ->
@@ -128,6 +130,7 @@ $(document).ready ->
         $(this).css('font-size', (fontsize+1) + "pt")
       return
   $("[name='aff-f-1']").focusout ->
+    editmode = false
     fs = pxtopt(parseInt($(this).css('font-size')))
     while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
       $(this).css('font-size', fs+'pt')
@@ -141,7 +144,9 @@ $(document).ready ->
         extendaff(ss, startingpage)
     return
   $("[name='aff-f-1']").focusin ->
-    affeditmode()
+    if(editmode == false)
+      editmode = true
+      affeditmode()
     return
   $(document).keydown ->
     if(event.which == 8 && !$(event.target).is("input, textarea"))

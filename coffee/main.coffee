@@ -44,8 +44,8 @@ affgrabtext = (page) ->
   console.log("grabtext")
   affta = page.find("[name='aff-f-1']")
   affalltext.concat(affta.val())
-  #if(page.find("[name='pn']").val() != 1)
-  # page.remove()
+  if(page.find("[name='pn']").val() > 1)
+   page.remove()
   return
 
 #Enter affidavit edit mode
@@ -53,8 +53,10 @@ affeditmode = () ->
   #reset affalltext
   affalltext = ""
   console.log("editmode")
+  affpgcount = 1
   $("[name='aff-1']").each ->
     affgrabtext($(this))
+  maxpgrenum()
   console.log(affalltext)
   $("[name='aff-f-1']").val(affalltext)
   return

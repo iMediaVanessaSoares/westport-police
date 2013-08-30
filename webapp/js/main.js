@@ -55,14 +55,19 @@ affgrabtext = function(page) {
   console.log("grabtext");
   affta = page.find("[name='aff-f-1']");
   affalltext.concat(affta.val());
+  if (page.find("[name='pn']").val() > 1) {
+    page.remove();
+  }
 };
 
 affeditmode = function() {
   affalltext = "";
   console.log("editmode");
+  affpgcount = 1;
   $("[name='aff-1']").each(function() {
     return affgrabtext($(this));
   });
+  maxpgrenum();
   console.log(affalltext);
   $("[name='aff-f-1']").val(affalltext);
 };

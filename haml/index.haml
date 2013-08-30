@@ -361,33 +361,33 @@
               %input{:type => "text", :name => "tcourt"}
         .survay-container
           %textarea.taform{:name => "aff-f-1", :rows => "40"}
-          .foot
-            .upper.thick-top.thin-bottom
-              .left.pull-left.thin-right
-                %p
-                  %label
-                    Printed Name of Affiant
-                  %br
-                  %input{:type => "text", :name => "paffi"}
-              .right.pull-right.thin-left
-                %p
-                  %label
-                    Signed Under The Pains And Penalty of Perjury
-                  %br
-                  %input{:type => "text", :name => "affsig"}
-            .mid.thin-bottom.thin-top
-            .lower.thin-top
-              %p.pfix
-                Signature of Justice, Clerk Magistrate or Assistant Clerk
-                %input{:type => "text", :name => "affsig2"}
-                Date
-                %input{:type => "text", :name => "date"}
-              %p.center
-                Page
-                %input.pnum{:type => "text", :readonly => "readonly", :value => '1', :name => 'pn'}
-                of
-                %input.pnum{:type => "text", :readonly => "readonly", :value => "1", :name => "mpage"}
-                Pages of this Affidavit
+        .foot
+          .upper.thick-top.thin-bottom
+            .left.pull-left.thin-right
+              %p
+                %label
+                  Printed Name of Affiant
+                %br
+                %input{:type => "text", :name => "paffi"}
+            .right.pull-right.thin-left
+              %p
+                %label
+                  Signed Under The Pains And Penalty of Perjury
+                %br
+                %input{:type => "text", :name => "affsig"}
+          .mid.thin-bottom.thin-top
+          .lower.thin-top
+            %p.pfix
+              Signature of Justice, Clerk Magistrate or Assistant Clerk
+              %input{:type => "text", :name => "affsig2"}
+              Date
+              %input{:type => "text", :name => "date"}
+            %p.center
+              Page
+              %input.pnum{:type => "text", :readonly => "readonly", :value => '1', :name => 'pn'}
+              of
+              %input.pnum{:type => "text", :readonly => "readonly", :value => "1", :name => "mpage"}
+              Pages of this Affidavit
 
     .p2.border.center
       %form{:action => "", :method => "post"}

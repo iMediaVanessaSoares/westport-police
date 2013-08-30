@@ -26,7 +26,7 @@ pnnum =() ->
 newaffpage = (priorpage,ext) ->
   newpage = priorpage.clone(true)
   affpgcount++
-  npchild = newpage.children().children().children("[name='aff-f-1']")
+  npchild = newpage.find("[name='aff-f-1']")
   priorpage.after newpage
   npchild.val("")
   if(ext.length>maxchar)
@@ -41,16 +41,22 @@ newaffpage = (priorpage,ext) ->
 #grabs text from all affidavit field
 affgrabtext = (page) ->
   #grab aff form
-  affta = page.children().children().children("[name='aff-f-1']")
+  console.log("grabtext")
+  affta = page.find("[name='aff-f-1']")
   affalltext.concat(affta.val())
+  #if(page.find("[name='pn']").val() != 1)
+  # page.remove()
   return
 
 #Enter affidavit edit mode
-addeditmode = () ->
+affeditmode = () ->
   #reset affalltext
   affalltext = ""
+  console.log("editmode")
   $("[name='aff-1']").each ->
-    $(this).affgrabtext($(this))
+    affgrabtext($(this))
+  console.log(affalltext)
+  $("[name='aff-f-1']").val(affalltext)
   return
 
 extendaff = (extra, priorpage) ->
@@ -58,18 +64,18 @@ extendaff = (extra, priorpage) ->
   affpgcount++
   newpage.attr("name", "aff-1")
   #Will write recursive search loop later
-  newpage.children().children().children().children().children().children("[name='pn']").val(affpgcount)
-  temp = newpage.children().children().children().children().children().children().children("[name='paffi']")
+  newpage.find("[name='pn']").val(affpgcount)
+  temp = newpage.find("[name='paffi']")
   temp.attr('name', temp.attr('name'))
-  temp = newpage.children().children().children().children().children().children().children("[name='affsig']")
+  temp = newpage.find("[name='affsig']")
   temp.attr('name', temp.attr('name'))
-  temp = newpage.children().children().children().children().children().children("[name='date']")
+  temp = newpage.find("[name='date']")
   temp.attr('name', temp.attr('name'))
-  temp = newpage.children().children().children().children().children().children("[name='affsig2']")
+  temp = newpage.find("[name='affsig2']")
   temp.attr('name', temp.attr('name'))
-  temp = newpage.children().children().children().children().children("[name='tcourt']")
+  temp = newpage.find("[name='tcourt']")
   temp.attr('name', temp.attr('name'))
-  npchild = newpage.children().children().children("[name='aff-f-1']")
+  npchild = newpage.find("[name='aff-f-1']")
   npchild.attr('name', ("aff-f-1"))
   leftovers = extra.substring(maxchar)
   npchild.val extra.substring(0,maxchar)
@@ -132,8 +138,8 @@ $(document).ready ->
       if(ss.length > 0)
         extendaff(ss, startingpage)
     return
-  $("[name='aff-f-1']").keydown ->
-    keydownhandler(event)
+  $("[name='aff-f-1']").focusin ->
+    affeditmode()
     return
   $(document).keydown ->
     if(event.which == 8 && !$(event.target).is("input, textarea"))

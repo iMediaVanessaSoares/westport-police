@@ -59,11 +59,7 @@ placenextline = (page, text) ->
   newtext = text.substring(nline.length)
   affta.val(affta.val()+nline)
   #now check scroll height
-  console.log(page.prop('scrollHeight'))
-  console.log(page.outerHeight())
   if(affta.prop('scrollHeight') > affta.outerHeight())
-    console.log("what?!")
-    console.log("end recurse")
     affta.val(oldval)
     return text
   else
@@ -168,13 +164,14 @@ $(document).ready ->
     while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
       $(this).css('font-size', fs+'pt')
       fs--
-    if($(this).val().length > maxchar)
-      ss = $(this).val().substring(maxchar)
-      $(this).val $(this).val().substring(0,maxchar)
+    if(this.scrollHeight > $(this).outerHeight())
+      affalltext = $(this).val()
+      $(this).val ""
       startingpage = $("[name='aff-1']")
+      extra = placenextline(startingpage, affalltext)
       #recursive call to handle the rest
-      if(ss.length > 0)
-        extendaff(ss, startingpage)
+      if(extra.length > 0)
+        extendaff(extra, startingpage)
     return
   $("[name='aff-f-1']").focusin ->
     if(editmode == false)

@@ -70,11 +70,7 @@ placenextline = function(page, text) {
   oldval = affta.val();
   newtext = text.substring(nline.length);
   affta.val(affta.val() + nline);
-  console.log(page.prop('scrollHeight'));
-  console.log(page.outerHeight());
   if (affta.prop('scrollHeight') > affta.outerHeight()) {
-    console.log("what?!");
-    console.log("end recurse");
     affta.val(oldval);
     return text;
   } else {
@@ -180,19 +176,20 @@ $(document).ready(function() {
     }
   });
   $("[name='aff-f-1']").focusout(function() {
-    var fs, ss, startingpage;
+    var extra, fs, startingpage;
     editmode = false;
     fs = pxtopt(parseInt($(this).css('font-size')));
     while (this.scrollHeight > $(this).outerHeight() && fs > lowerlim) {
       $(this).css('font-size', fs + 'pt');
       fs--;
     }
-    if ($(this).val().length > maxchar) {
-      ss = $(this).val().substring(maxchar);
-      $(this).val($(this).val().substring(0, maxchar));
+    if (this.scrollHeight > $(this).outerHeight()) {
+      affalltext = $(this).val();
+      $(this).val("");
       startingpage = $("[name='aff-1']");
-      if (ss.length > 0) {
-        extendaff(ss, startingpage);
+      extra = placenextline(startingpage, affalltext);
+      if (extra.length > 0) {
+        extendaff(extra, startingpage);
       }
     }
   });

@@ -76,13 +76,11 @@ placenextline = function(page, text) {
     console.log("what?!");
     console.log("end recurse");
     affta.val(oldval);
-    restext = text;
+    return text;
   } else {
     if (newtext.length === 0) {
-      console.log("here");
-      restext = newtext;
+      return newtext;
     } else {
-      console.log("catch");
       restext = placenextline(page, newtext);
     }
   }
@@ -130,7 +128,6 @@ extendaff = function(extra, priorpage) {
   npchild.attr('name', "aff-f-1");
   priorpage.after(newpage);
   leftovers = placenextline(newpage, extra);
-  npchild.val(extra.substring(0, maxchar));
   maxpgrenum();
   if (leftovers.length > 0) {
     extendaff(leftovers, newpage);

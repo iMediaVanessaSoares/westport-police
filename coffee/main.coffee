@@ -45,6 +45,7 @@ getnextline = (text) ->
   exp = new RegExp("([^\.\n]*)(\.|\n){1}")
   result = exp.exec(text)
   if(result[0] == null)
+    #Leaving this here just in case
     console.log("YOU DUMBASS!")
     return ""
   return result[0]
@@ -64,13 +65,11 @@ placenextline = (page, text) ->
     console.log("what?!")
     console.log("end recurse")
     affta.val(oldval)
-    restext = text
+    return text
   else
     if(newtext.length == 0)
-      console.log("here")
-      restext = newtext
+      return newtext
     else
-      console.log("catch")
       restext = placenextline(page, newtext)
   return restext
 
@@ -116,7 +115,7 @@ extendaff = (extra, priorpage) ->
   npchild.attr('name', ("aff-f-1"))
   priorpage.after newpage
   leftovers = placenextline(newpage, extra)
-  npchild.val extra.substring(0,maxchar)
+  #npchild.val extra.substring(0,maxchar)
   #Update max pages on every affidavit page
   #priorpage.after newpage
   maxpgrenum()

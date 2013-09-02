@@ -173,6 +173,13 @@ $(document).ready(function() {
       if (fontsize < Upperlim) {
         $(this).css('font-size', (fontsize + 1) + "pt");
       }
+      if (this.scrollWidth > $(this).outerWidth()) {
+        fontsize = parseInt($(this).css("font-size"), 10);
+        fontsize = pxtopt(fontsize);
+        if (fontsize > lowerlim) {
+          $(this).css('font-size', (fontsize - 1) + "pt");
+        }
+      }
     }
   });
   $("[name='aff-f-1']").focusout(function() {

@@ -120,6 +120,11 @@ extendaff = (extra, priorpage) ->
   return
 
 $(document).ready ->
+  #$(":input").each ->
+  #  if($(this).hasClass('taform') == false)
+  #    fontsize = parseInt($(this).css("font-size"))
+  #    $(this).css('height', (fontsize)+'px')
+  #  return
   $(":input").focusout ->
     if($(this).attr('name')!="aff-f-1")
       ghost = $(":input[name="+$(this).attr('name')+"]")

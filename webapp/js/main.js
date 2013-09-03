@@ -167,13 +167,13 @@ $(document).ready(function() {
       if (fontsize > lowerlim) {
         $(this).css('font-size', (fontsize - 1) + "pt");
       }
-    } else if (this.scrollHeight < $(this).outerHeight() || this.scrollWidth < $(this).outerWidth()) {
+    } else if (this.scrollHeight <= $(this).outerHeight() || this.scrollWidth < $(this).outerWidth()) {
       fontsize = parseInt($(this).css("font-size"), 10);
       fontsize = pxtopt(fontsize);
-      if (fontsize < Upperlim) {
+      if (fontsize < Upperlim || ($(this).hasClass('taform') && fontsize < 14)) {
         $(this).css('font-size', (fontsize + 1) + "pt");
       }
-      if (this.scrollWidth > $(this).outerWidth()) {
+      if (this.scrollWidth > $(this).outerWidth() || this.scrollHeight > $(this).outerHeight()) {
         fontsize = parseInt($(this).css("font-size"), 10);
         fontsize = pxtopt(fontsize);
         if (fontsize > lowerlim) {

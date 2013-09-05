@@ -141,7 +141,7 @@ $(document).ready(function() {
   });
   $(":checkbox").click(function() {
     var ghost;
-    ghost = $(":checkbox[name=" + $(this).attr('name') + "-g]");
+    ghost = $(":checkbox[name=" + $(this).attr('name') + "]");
     ghost.prop("checked", $(this).prop("checked"));
   });
   $(":checkbox[name^=cr]").click(function() {

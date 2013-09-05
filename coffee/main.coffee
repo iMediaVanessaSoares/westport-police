@@ -132,7 +132,7 @@ $(document).ready ->
       ghost.css('font-size', $(this).css('font-size'))
     return
   $(":checkbox").click ->
-    ghost = $(":checkbox[name="+$(this).attr('name')+"-g]")
+    ghost = $(":checkbox[name="+$(this).attr('name')+"]")
     ghost.prop("checked", $(this).prop("checked"))
     return
   $(":checkbox[name^=cr]").click ->

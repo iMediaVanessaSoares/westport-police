@@ -131,6 +131,7 @@ extendaff = function(extra, priorpage) {
 };
 
 $(document).ready(function() {
+  maxpgrenum();
   $(":input").focusout(function() {
     var ghost;
     if ($(this).attr('name') !== "aff-f-1") {

@@ -120,6 +120,7 @@ extendaff = (extra, priorpage) ->
   return
 
 $(document).ready ->
+  maxpgrenum()
   #$(":input").each ->
   #  if($(this).hasClass('taform') == false)
   #    fontsize = parseInt($(this).css("font-size"))

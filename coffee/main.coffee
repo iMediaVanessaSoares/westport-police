@@ -46,7 +46,7 @@ getnextline = (text) ->
   result = exp.exec(text)
   if(result[0] == null)
     #Leaving this here just in case
-    console.log("YOU DUMBASS!")
+    console.log("Oops!")
     return ""
   return result[0]
 
@@ -55,19 +55,21 @@ placenextline = (page, text) ->
   nline = getnextline(text)
   affta = page.find("[name='aff-f-1']")
   #save old val
-  oldval = affta.val()
+  oldval = String(affta.val())
   newtext = text.substring(nline.length)
   affta.val(affta.val()+nline)
   #now check scroll height
+  console.log(nline)
   if(affta.prop('scrollHeight') > affta.outerHeight())
     affta.val(oldval)
+    if(affta.prop('scrollHeight') > affta.outerHeight())
+      console.log("still too big")
     return text
   else
     if(newtext.length == 0)
       return newtext
     else
-      restext = placenextline(page, newtext)
-  return restext
+      return  placenextline(page, newtext)
 
 #grabs text from all affidavit field
 affgrabtext = (page) ->

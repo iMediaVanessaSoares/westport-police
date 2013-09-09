@@ -57,30 +57,33 @@ getnextline = function(text) {
   exp = new RegExp("([^\.\n]*)(\.|\n){1}");
   result = exp.exec(text);
   if (result[0] === null) {
-    console.log("YOU DUMBASS!");
+    console.log("Oops!");
     return "";
   }
   return result[0];
 };
 
 placenextline = function(page, text) {
-  var affta, newtext, nline, oldval, restext;
+  var affta, newtext, nline, oldval;
   nline = getnextline(text);
   affta = page.find("[name='aff-f-1']");
-  oldval = affta.val();
+  oldval = String(affta.val());
   newtext = text.substring(nline.length);
   affta.val(affta.val() + nline);
+  console.log(nline);
   if (affta.prop('scrollHeight') > affta.outerHeight()) {
     affta.val(oldval);
+    if (affta.prop('scrollHeight') > affta.outerHeight()) {
+      console.log("still too big");
+    }
     return text;
   } else {
     if (newtext.length === 0) {
       return newtext;
     } else {
-      restext = placenextline(page, newtext);
+      return placenextline(page, newtext);
     }
   }
-  return restext;
 };
 
 affgrabtext = function(page) {

@@ -5,6 +5,9 @@ affpgcount = 1
 currpg = 1
 affalltext = ""
 editmode = false
+curoffpage = 0
+affpageoffset = 0
+curpage = 1
 
 pxtopt = (pixel) ->
   return Math.round(pixel/((.35146/25.4)*96))
@@ -59,8 +62,14 @@ placenextline = (page, text) ->
   newtext = text.substring(nline.length)
   affta.val(affta.val()+nline)
   #now check scroll height
-  console.log(nline)
+  #console.log(nline)
   if(affta.prop('scrollHeight') > affta.outerHeight())
+    fs = pxtopt(parseInt($(this).css('font-size')))
+    while(this.scrollHeight > $(this).outerHeight() && fs != lowerlim)
+      $(this).css('font-size', fs+'pt')
+      fs--
+      if(fs < lowerlim)
+        fs = lowerlim
     affta.val(oldval)
     if(affta.prop('scrollHeight') > affta.outerHeight())
       console.log("still too big")
@@ -76,12 +85,19 @@ affgrabtext = (page) ->
   #grab aff form
   affta = page.find("[name='aff-f-1']")
   affalltext += affta.val()
-  if(page.find("[name='pn']").val() > 1)
-   page.remove()
+  if(page.find("[name='pn']").val() < curpage)
+    affpageoffset += affta.val().length
+  else if(page.find("[name='pn']").val() == curpage)
+    #get cursor offset
+    curoffpage = affta.prop("selectionStart")
+    console.log(curoffpage)
+  if(page.find("[name='pn']").val() != "1")
+    page.remove()
   return
 
 #Enter affidavit edit mode
 affeditmode = () ->
+  affpageoffset = 0
   #reset affalltext
   affalltext = ""
   affpgcount = 1
@@ -91,6 +107,8 @@ affeditmode = () ->
   $("[name='aff-f-1']").val(affalltext)
   $("[name='aff-f-1']").focus()
   $(document).scrollTop($("[name='aff-f-1']").position().top)
+  #set cursor position to offset
+
   return
 
 extendaff = (extra, priorpage) ->
@@ -172,11 +190,12 @@ $(document).ready ->
             $(this).css('font-size', (fontsize-1) + "pt")
       return
   $("[name='aff-f-1']").focusout ->
-    editmode = false
     fs = pxtopt(parseInt($(this).css('font-size')))
-    while(this.scrollHeight > $(this).outerHeight() && fs > lowerlim)
-      $(this).css('font-size', fs+'pt')
+    while(this.scrollHeight > $(this).outerHeight() && fs != lowerlim)
       fs--
+      $(this).css('font-size', fs+'pt')
+      if(fs < lowerlim)
+        fs = lowerlim
     if(this.scrollHeight > $(this).outerHeight())
       affalltext = $(this).val()
       $(this).val ""
@@ -185,10 +204,12 @@ $(document).ready ->
       #recursive call to handle the rest
       if(extra.length > 0)
         extendaff(extra, startingpage)
+      editmode = false
     return
   $("[name='aff-f-1']").focusin ->
     if(editmode == false)
       editmode = true
+      curpage = parseInt($(this).parent().parent().find("[name='pn']").val(),10)
       affeditmode()
     return
   $(document).keydown ->

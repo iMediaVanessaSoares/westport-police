@@ -60,7 +60,7 @@ newaffpage = function(priorpage, ext) {
 
 getnextline = function(text) {
   var exp, result;
-  exp = new RegExp("([^\.\n]*)(\.|\n){1}");
+  exp = new RegExp("([^\n]*)(\n){1}");
   result = exp.exec(text);
   if (result[0] === null) {
     console.log("Oops!");
@@ -107,7 +107,6 @@ affgrabtext = function(page) {
     affpageoffset += affta.val().length;
   } else if (page.find("[name='pn']").val() === curpage) {
     curoffpage = affta.prop("selectionStart");
-    console.log(curoffpage);
   }
   if (page.find("[name='pn']").val() !== "1") {
     page.remove();

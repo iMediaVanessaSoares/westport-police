@@ -45,7 +45,7 @@ newaffpage = (priorpage,ext) ->
 getnextline = (text) ->
   #regexp to find chain of letters ending in linefeed or period
   #return line
-  exp = new RegExp("([^\.\n]*)(\.|\n){1}")
+  exp = new RegExp("([^\n]*)(\n){1}")
   result = exp.exec(text)
   if(result[0] == null)
     #Leaving this here just in case
@@ -90,7 +90,6 @@ affgrabtext = (page) ->
   else if(page.find("[name='pn']").val() == curpage)
     #get cursor offset
     curoffpage = affta.prop("selectionStart")
-    console.log(curoffpage)
   if(page.find("[name='pn']").val() != "1")
     page.remove()
   return

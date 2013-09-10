@@ -125,6 +125,7 @@ affeditmode = function() {
   $("[name='aff-f-1']").val(affalltext);
   $("[name='aff-f-1']").focus();
   $(document).scrollTop($("[name='aff-f-1']").position().top);
+  $("[name='aff-f-1']").prop("selectionStart", curoffpage + affpageoffset);
 };
 
 extendaff = function(extra, priorpage) {
@@ -227,10 +228,10 @@ $(document).ready(function() {
       editmode = false;
     }
   });
-  $("[name='aff-f-1']").focusin(function() {
+  $("[name='aff-f-1']").mouseup(function() {
     if (editmode === false) {
       editmode = true;
-      curpage = parseInt($(this).parent().parent().find("[name='pn']").val(), 10);
+      curpage = $(this).parent().parent().find("[name='pn']").val();
       affeditmode();
     }
   });

@@ -108,7 +108,7 @@ affeditmode = () ->
   $("[name='aff-f-1']").focus()
   $(document).scrollTop($("[name='aff-f-1']").position().top)
   #set cursor position to offset
-
+  $("[name='aff-f-1']").prop("selectionStart", curoffpage+affpageoffset)
   return
 
 extendaff = (extra, priorpage) ->
@@ -206,10 +206,10 @@ $(document).ready ->
         extendaff(extra, startingpage)
       editmode = false
     return
-  $("[name='aff-f-1']").focusin ->
+  $("[name='aff-f-1']").mouseup ->
     if(editmode == false)
       editmode = true
-      curpage = parseInt($(this).parent().parent().find("[name='pn']").val(),10)
+      curpage = $(this).parent().parent().find("[name='pn']").val()
       affeditmode()
     return
   $(document).keydown ->

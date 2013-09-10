@@ -6,8 +6,11 @@ currpg = 1
 affalltext = ""
 editmode = false
 curoffpage = 0
+curselend = 0
 affpageoffset = 0
 curpage = 1
+entereditmode = false
+affnode = null
 
 pxtopt = (pixel) ->
   return Math.round(pixel/((.35146/25.4)*96))
@@ -90,6 +93,7 @@ affgrabtext = (page) ->
   else if(page.find("[name='pn']").val() == curpage)
     #get cursor offset
     curoffpage = affta.prop("selectionStart")
+    curselend = affta.prop("selectionEnd")
   if(page.find("[name='pn']").val() != "1")
     page.remove()
   return
@@ -108,6 +112,7 @@ affeditmode = () ->
   $(document).scrollTop($("[name='aff-f-1']").position().top)
   #set cursor position to offset
   $("[name='aff-f-1']").prop("selectionStart", curoffpage+affpageoffset)
+  $("[name='aff-f-1']").prop("selectionEnd", curselend+affpageoffset)
   return
 
 extendaff = (extra, priorpage) ->
@@ -204,11 +209,17 @@ $(document).ready ->
       if(extra.length > 0)
         extendaff(extra, startingpage)
       editmode = false
+      entereditmode = false
     return
-  $("[name='aff-f-1']").mouseup ->
+  $("[name='aff-f-1']").mousedown ->
     if(editmode == false)
+      entereditmode = true
+      affnode = $(this)
+    return
+  $(document).mouseup ->
+    if(entereditmode == true)
       editmode = true
-      curpage = $(this).parent().parent().find("[name='pn']").val()
+      curpage = affnode.parent().parent().find("[name='pn']").val()
       affeditmode()
     return
   $(document).keydown ->

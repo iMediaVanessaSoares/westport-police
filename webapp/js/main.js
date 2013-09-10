@@ -60,10 +60,10 @@ newaffpage = function(priorpage, ext) {
 
 getnextline = function(text) {
   var exp, result;
-  exp = new RegExp("([^\n]*)(\n){1}");
+  exp = new RegExp("(\n|([^\n]*)(\.){1,})");
   result = exp.exec(text);
   if (result[0] === null) {
-    console.log("Oops!");
+    console.log("Error: Null Regex Value");
     return "";
   }
   return result[0];
@@ -87,7 +87,7 @@ placenextline = function(page, text) {
     }
     affta.val(oldval);
     if (affta.prop('scrollHeight') > affta.outerHeight()) {
-      console.log("still too big");
+      console.log("Error: Page Capacity Exceeded");
     }
     return text;
   } else {

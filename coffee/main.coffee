@@ -45,11 +45,11 @@ newaffpage = (priorpage,ext) ->
 getnextline = (text) ->
   #regexp to find chain of letters ending in linefeed or period
   #return line
-  exp = new RegExp("([^\n]*)(\n){1}")
+  exp = new RegExp("(\n|([^\n]*)(\.){1,})")
   result = exp.exec(text)
   if(result[0] == null)
     #Leaving this here just in case
-    console.log("Oops!")
+    console.log("Error: Null Regex Value")
     return ""
   return result[0]
 
@@ -72,7 +72,7 @@ placenextline = (page, text) ->
         fs = lowerlim
     affta.val(oldval)
     if(affta.prop('scrollHeight') > affta.outerHeight())
-      console.log("still too big")
+      console.log("Error: Page Capacity Exceeded")
     return text
   else
     if(newtext.length == 0)
